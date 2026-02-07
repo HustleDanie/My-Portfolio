@@ -10,6 +10,28 @@ import Image from "next/image"
 
 const projects = [
   {
+    id: "devassist",
+    title: "DevAssist",
+    description:
+      "Enterprise-grade automated code migration using LangGraph workflow. Supports Python 2→3 and Flask→FastAPI migrations with a multi-agent system featuring specialized agents for seamless code transformation.",
+    image: "/images/devassist.png",
+    technologies: ["LangGraph", "Python", "FastAPI", "Docker", "LLM", "AST", "GitHub API"],
+    links: [
+      { label: "GitHub", url: "https://github.com/HustleDanie/DevAssist" },
+    ],
+  },
+  {
+    id: "stockagentx",
+    title: "StockAgentX",
+    description:
+      "AI-powered financial intelligence platform leveraging multi-agent orchestration, RAG pipeline, and deep learning (FinBERT, LSTM) for real-time stock market analysis with SEC filings integration.",
+    image: "/images/stock.png",
+    technologies: ["CrewAI", "LangChain", "PyTorch", "FastAPI", "Pinecone", "MLflow", "Streamlit", "PostgreSQL"],
+    links: [
+      { label: "GitHub", url: "https://github.com/HustleDanie/StockAgentX-Multi-Agent-Financial-Intelligence-Platform" },
+    ],
+  },
+  {
     id: "neural-network-playground",
     title: "Neural Network Playground",
     description:

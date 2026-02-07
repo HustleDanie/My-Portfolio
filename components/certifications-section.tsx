@@ -22,39 +22,28 @@ const certifications = [
       "Comprehensive specialization covering neural networks, deep learning, and practical applications in computer vision and natural language processing.",
   },
   {
-    title: "Machine Learning Engineer",
-    issuer: "Google Cloud Platform",
-    date: "2023",
+    title: "Deep Learning Specialization",
+    issuer: "Coursera • DeepLearning.AI",
+    date: "2024",
     status: "Completed",
-    credentialId: "GCP-MLE-456",
-    skills: ["MLOps", "TensorFlow", "Cloud ML", "AutoML", "Kubernetes"],
-    image: "/placeholder.svg?height=200&width=300",
-    link: "#",
-    description: "Professional certification for designing and implementing ML solutions on Google Cloud Platform.",
+    credentialId: "DL2024-UC-790",
+    skills: ["Neural Networks", "Deep Learning", "TensorFlow", "Computer Vision", "NLP", "CNN", "RNN"],
+    image: "/images/coursera-deep-learning-cert.png",
+    link: "https://coursera.org/verify/specialization/XXXXXXXX",
+    description:
+      "Comprehensive specialization covering neural networks, deep learning, and practical applications in computer vision and natural language processing.",
   },
   {
-    title: "AWS Machine Learning Specialty",
-    issuer: "Amazon Web Services",
-    date: "2023",
+    title: "Deep Learning Specialization",
+    issuer: "Coursera • DeepLearning.AI",
+    date: "2024",
     status: "Completed",
-    credentialId: "AWS-MLS-123",
-    skills: ["AWS SageMaker", "ML Pipeline", "Data Engineering", "Model Deployment"],
-    image: "/placeholder.svg?height=200&width=300",
-    link: "#",
+    credentialId: "DL2024-UC-791",
+    skills: ["Neural Networks", "Deep Learning", "TensorFlow", "Computer Vision", "NLP", "CNN", "RNN"],
+    image: "/images/coursera-deep-learning-cert.png",
+    link: "https://coursera.org/verify/specialization/XXXXXXXX",
     description:
-      "Specialty certification demonstrating expertise in building, training, and deploying ML models on AWS.",
-  },
-  {
-    title: "TensorFlow Developer Certificate",
-    issuer: "TensorFlow",
-    date: "2022",
-    status: "Completed",
-    credentialId: "TF-DEV-321",
-    skills: ["TensorFlow", "Keras", "Computer Vision", "NLP", "Time Series"],
-    image: "/placeholder.svg?height=200&width=300",
-    link: "#",
-    description:
-      "Official certification demonstrating proficiency in using TensorFlow for machine learning applications.",
+      "Comprehensive specialization covering neural networks, deep learning, and practical applications in computer vision and natural language processing.",
   },
 ]
 
@@ -81,16 +70,16 @@ export function CertificationsSection() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {certifications.slice(0, 2).map((cert, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {certifications.map((cert, index) => (
             <motion.div
-              key={cert.title}
+              key={cert.credentialId}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               className="group"
             >
-              <Card className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-lg dark:hover:shadow-gray-900/50 h-full overflow-hidden group-hover:scale-105 transform-gpu">
+              <Card className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-lg dark:hover:shadow-gray-900/50 h-full overflow-hidden group-hover:scale-105 transform-gpu rounded-none">
                 <div className="relative w-full h-96 bg-gray-100 dark:bg-gray-800">
                   <Image
                     src={cert.image || "/placeholder.svg"}

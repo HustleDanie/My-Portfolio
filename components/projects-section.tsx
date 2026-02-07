@@ -1,88 +1,41 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Brain, Code, Cpu, Eye, Zap, Target } from "lucide-react"
+import { ArrowRight, Github, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import Image from "next/image"
 
 const featuredProjects = [
   {
+    id: "devassist",
+    title: "DevAssist",
+    description:
+      "Enterprise-grade automated code migration using LangGraph workflow. Supports Python 2→3 and Flask→FastAPI migrations with a multi-agent system featuring Git Clone, Planner Agent, Coder Agent, and Tester Agent for seamless code transformation.",
+    image: "/images/devassist.png",
+    github: "https://github.com/HustleDanie/DevAssist",
+  },
+  {
+    id: "stockagentx",
+    title: "StockAgentX",
+    description:
+      "AI-powered financial intelligence platform leveraging multi-agent orchestration, RAG pipeline, and deep learning (FinBERT, LSTM) for real-time stock market analysis with SEC filings integration and sentiment analysis.",
+    image: "/images/stock.png",
+    github: "https://github.com/HustleDanie/StockAgentX-Multi-Agent-Financial-Intelligence-Platform",
+  },
+  {
     id: "neural-network-playground",
     title: "Neural Network Playground",
-    subtitle: "Interactive Deep Learning Sandbox",
     description:
       "Hands-on exploration of neural architectures and training dynamics with real-time visualization and experimentation tools.",
     image: "/placeholder-logo.svg",
-    technologies: ["TensorFlow", "React", "D3.js", "Python", "WebGL"],
-    techIcons: [
-      { name: "TensorFlow", icon: Brain, color: "text-orange-500" },
-      { name: "React", icon: Code, color: "text-blue-500" },
-      { name: "Python", icon: Cpu, color: "text-green-500" },
-      { name: "WebGL", icon: Eye, color: "text-purple-500" },
-    ],
-    category: "Machine Learning",
-    status: "Live Demo",
-    features: [
-      "Interactive Neural Network Builder",
-      "Real-time Training Visualization",
-      "Custom Dataset Upload",
-      "Architecture Comparison",
-    ],
-  },
-  {
-    id: "deep-rl-playground",
-    title: "Deep RL Playground",
-    subtitle: "Reinforcement Learning Environment",
-    description:
-      "Interactive platform for training and testing reinforcement learning agents across various environments with real-time performance metrics and visualization.",
-    image: "/placeholder-logo.svg",
-    technologies: ["PyTorch", "Gymnasium", "React", "Python", "TensorBoard"],
-    techIcons: [
-      { name: "PyTorch", icon: Brain, color: "text-orange-500" },
-      { name: "React", icon: Code, color: "text-blue-500" },
-      { name: "Python", icon: Cpu, color: "text-green-500" },
-      { name: "RL", icon: Zap, color: "text-yellow-500" },
-    ],
-    category: "Reinforcement Learning",
-    status: "Live Demo",
-    features: [
-      "Multiple RL Algorithms",
-      "Custom Environment Builder",
-      "Real-time Training Metrics",
-      "Agent Performance Comparison",
-    ],
-  },
-  {
-    id: "vision-transformer-training",
-    title: "Vision Transformer Training",
-    subtitle: "Computer Vision with Transformers",
-    description:
-      "Advanced training interface for Vision Transformers (ViT) with support for image classification, object detection, and transfer learning capabilities.",
-    image: "/placeholder-logo.svg",
-    technologies: ["PyTorch", "Transformers", "React", "Python", "OpenCV"],
-    techIcons: [
-      { name: "PyTorch", icon: Brain, color: "text-orange-500" },
-      { name: "Transformers", icon: Code, color: "text-blue-500" },
-      { name: "Python", icon: Cpu, color: "text-green-500" },
-      { name: "Vision", icon: Eye, color: "text-purple-500" },
-    ],
-    category: "Computer Vision",
-    status: "Live Demo",
-    features: [
-      "ViT Architecture Builder",
-      "Image Dataset Management",
-      "Transfer Learning Support",
-      "Performance Analytics",
-    ],
+    github: "#",
   },
 ]
 
 const ProjectsSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center py-20 px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-      <div className="max-w-6xl mx-auto w-full">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -99,8 +52,8 @@ const ProjectsSection = () => {
           </p>
         </motion.div>
 
-        {/* Projects List */}
-        <div className="space-y-12 md:space-y-16 mb-16">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -109,35 +62,55 @@ const ProjectsSection = () => {
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               className="group"
             >
-              <Link href={`/projects/${project.id}`}>
-                <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start transition-all duration-300 border border-gray-300 dark:border-gray-700 rounded-lg p-6 md:p-8 hover:border-gray-500 dark:hover:border-gray-500 hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-gray-400/50 dark:hover:shadow-gray-500/50">
-                  {/* Project Logo - Left Side */}
-                  <div className="relative w-full md:w-1/2 lg:w-2/5 h-64 md:h-80 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-8">
+              <div className="h-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-900/50">
+                {/* Project Image */}
+                <Link href={`/projects/${project.id}`}>
+                  <div className="relative h-56 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
                     <img
                       src={project.image || "/placeholder-logo.svg"}
                       alt={project.title}
-                      className="object-contain group-hover:scale-105 transition-transform duration-300"
-                      style={{ width: '100%', height: '100%', maxWidth: '200px', maxHeight: '200px' }}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         e.currentTarget.src = "/placeholder-logo.svg"
                       }}
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
+                </Link>
 
-                  {/* Project Content - Right Side */}
-                  <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col justify-center space-y-6">
-                    {/* Header Section */}
-                    <div className="space-y-3">
-                      <h3 className="font-orbitron text-2xl md:text-3xl font-bold text-black dark:text-white mb-1 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="font-space-mono text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {project.description}
-                      </p>
-                    </div>
+                {/* Project Content */}
+                <div className="p-6">
+                  <Link href={`/projects/${project.id}`}>
+                    <h3 className="font-orbitron text-xl font-bold text-black dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                      {project.title}
+                    </h3>
+                  </Link>
+                  <p className="font-space-mono text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6 line-clamp-3">
+                    {project.description}
+                  </p>
+
+                  {/* GitHub Link */}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-space-mono text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Github className="h-4 w-4" />
+                      <span>View on GitHub</span>
+                    </Link>
+                    <Link
+                      href={`/projects/${project.id}`}
+                      className="flex items-center gap-1 text-sm font-space-mono text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                    >
+                      <span>Details</span>
+                      <ExternalLink className="h-3 w-3" />
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>

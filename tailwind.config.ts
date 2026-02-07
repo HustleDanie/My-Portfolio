@@ -64,7 +64,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          "var(--font-space-mono)",
           "ui-monospace",
           "SFMono-Regular",
           "Monaco",
@@ -74,7 +73,6 @@ const config: Config = {
           "monospace",
         ],
         mono: [
-          "var(--font-space-mono)",
           "ui-monospace",
           "SFMono-Regular",
           "Monaco",
@@ -96,7 +94,6 @@ const config: Config = {
           "sans-serif",
         ],
         "space-mono": [
-          "var(--font-space-mono)",
           "ui-monospace",
           "SFMono-Regular",
           "Monaco",
