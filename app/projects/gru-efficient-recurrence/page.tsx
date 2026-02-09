@@ -103,7 +103,7 @@ export default function GruEfficientRecurrencePage() {
   return (
     <>
       <MobileRestriction />
-      <div className="min-h-screen bg-white dark:bg-black pt-24 pb-16">
+      <div className="min-h-screen bg-background pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Header */}
           <motion.div

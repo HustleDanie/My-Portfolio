@@ -83,9 +83,9 @@ export default function DeepRlPlaygroundPage() {
   return (
     <>
       <MobileRestriction />
-      <div className="min-h-screen bg-white dark:bg-black">
+      <div className="min-h-screen bg-background">
         {/* Header */}
-        <div className="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">

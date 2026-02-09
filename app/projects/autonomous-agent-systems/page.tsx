@@ -137,7 +137,7 @@ export default function AutonomousAgentSystemsPage() {
   return (
     <>
       <MobileRestriction />
-      <div className="min-h-screen bg-white dark:bg-black">
+      <div className="min-h-screen bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8 pt-32">
           {/* Header */}
           <div className="mb-12">

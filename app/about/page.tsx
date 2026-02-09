@@ -20,7 +20,7 @@ export default function AboutPage() {
 
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-white dark:bg-black">
+    <div className="min-h-screen pt-24 pb-16 bg-background">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16">
         {/* Header Section */}
         <motion.div

@@ -62,7 +62,7 @@ export function BlogSectionMobile() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="blog-mobile" ref={ref} className="py-12 md:hidden relative bg-white dark:bg-black">
+    <section id="blog-mobile" ref={ref} className="py-12 md:hidden relative bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export function BlogSectionMobile() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link href={blog.link}>
-                <Card className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 group">
+                <Card className="bg-card border border-border overflow-hidden hover:border-muted-foreground/50 transition-all duration-300 group">
                   <div className="relative h-48 overflow-hidden">
                     <Image
                       src={blog.image}

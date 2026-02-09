@@ -3,9 +3,7 @@
 import { motion } from "framer-motion"
 import { useRef } from "react"
 import { useInView } from "framer-motion"
-import { ExternalLink } from "lucide-react"
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 const certifications = [
@@ -52,25 +50,22 @@ export function CertificationsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="certifications" ref={ref} className="py-20 relative">
-      <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <section id="certifications" ref={ref} className="py-12 md:py-20 relative">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
-            className="mb-16 text-center"
+            className="mb-8 md:mb-16 text-center"
           >
-            <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
+            <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
               Certifications
             </h2>
-            <div className="w-16 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
-            <p className="max-w-2xl mx-auto text-black dark:text-gray-300 font-space-mono text-sm md:text-base">
-              Professional certifications and credentials demonstrating expertise in AI, machine learning, and cloud technologies.
-            </p>
+            <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 md:mb-12">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.credentialId}
@@ -79,8 +74,8 @@ export function CertificationsSection() {
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               className="group"
             >
-              <Card className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-lg dark:hover:shadow-gray-900/50 h-full overflow-hidden group-hover:scale-105 transform-gpu rounded-none">
-                <div className="relative w-full h-96 bg-gray-100 dark:bg-gray-800">
+              <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg h-full overflow-hidden group-hover:scale-[1.02] transform-gpu rounded-lg">
+                <div className="relative w-full h-64 sm:h-80 md:h-96 bg-gray-100 dark:bg-gray-800">
                   <Image
                     src={cert.image || "/placeholder.svg"}
                     alt={`${cert.title} Certificate`}
@@ -88,11 +83,11 @@ export function CertificationsSection() {
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   {/* Overlay with short description */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6">
-                    <h3 className="font-orbitron text-xl font-semibold text-white mb-2">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 sm:p-5 md:p-6">
+                    <h3 className="font-orbitron text-base sm:text-lg md:text-xl font-semibold text-white mb-1 sm:mb-2">
                       {cert.title}
                     </h3>
-                    <p className="font-space-mono text-sm text-gray-200">
+                    <p className="font-space-mono text-xs sm:text-sm text-gray-200 line-clamp-2 sm:line-clamp-none">
                       {cert.description}
                     </p>
                   </div>
@@ -101,25 +96,6 @@ export function CertificationsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Explore More Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center"
-        >
-          <Button
-            asChild
-            size="lg"
-            className="font-space-mono font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 px-8 py-3 rounded-lg group"
-          >
-            <a href="/certifications" className="flex items-center gap-2">
-              Explore More Certifications
-              <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
-        </motion.div>
         </div>
       </div>
     </section>

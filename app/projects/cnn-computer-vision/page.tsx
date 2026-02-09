@@ -106,7 +106,7 @@ export default function CNNTrainingPage() {
   return (
     <>
       <MobileRestriction />
-      <div className="min-h-screen bg-white dark:bg-black">
+      <div className="min-h-screen bg-background">
         {/* Progress Bar */}
         <div className="bg-gray-50 dark:bg-gray-900/50 border-b border-gray-200 dark:border-gray-800 pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

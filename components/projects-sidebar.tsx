@@ -49,7 +49,7 @@ export function ProjectsSidebar({
       {/* Sidebar */}
       <div
         className={`
-        fixed lg:sticky top-0 left-0 h-screen w-80 bg-white dark:bg-black border-r border-gray-200 dark:border-gray-800 z-50 lg:z-auto
+        fixed lg:sticky top-0 left-0 h-screen w-80 bg-white dark:bg-card border-r border-gray-200 dark:border-gray-700 z-50 lg:z-auto
         transform transition-transform duration-300 ease-in-out lg:transform-none
         ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         overflow-y-auto

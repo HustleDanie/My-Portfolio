@@ -122,9 +122,9 @@ export default function ResearchPage() {
     : blogPosts
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen bg-background">
       {/* Combined Navbar and Header */}
-      <header className="fixed top-0 w-full z-50 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
+      <header className="fixed top-0 w-full z-50 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4">
           {/* Top Row - Logo and Navigation */}
           <div className="flex justify-between items-center py-4">
@@ -255,7 +255,7 @@ export default function ResearchPage() {
       <div className="flex max-w-7xl mx-auto pt-[9.5rem]">
         {/* Left Sidebar */}
         <aside
-          className={`fixed lg:sticky top-[9.5rem] lg:top-[9.5rem] h-[calc(100vh-9.5rem)] w-64 bg-white dark:bg-black border-r border-gray-200 dark:border-gray-800 z-30 transition-all duration-300 ${
+          className={`fixed lg:sticky top-[9.5rem] lg:top-[9.5rem] h-[calc(100vh-9.5rem)] w-64 bg-background border-r border-border z-30 transition-all duration-300 ${
             sidebarOpen ? "translate-x-0" : "-translate-x-full"
           } ${
             sidebarVisible ? "lg:translate-x-0 lg:w-64" : "lg:-translate-x-full lg:w-0"

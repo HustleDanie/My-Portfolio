@@ -34,26 +34,23 @@ const featuredProjects = [
 
 const ProjectsSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <section id="projects" className="min-h-screen flex items-center justify-center py-12 md:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20">
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
-          <h2 className="font-orbitron text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+          <h2 className="font-orbitron text-2xl sm:text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
             Featured Projects
           </h2>
-          <div className="w-16 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
-          <p className="max-w-2xl mx-auto text-black dark:text-gray-300 font-space-mono text-sm md:text-base">
-            Interactive AI projects and research tools showcasing practical applications of machine learning and deep learning.
-          </p>
+          <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 md:mb-16">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -62,10 +59,10 @@ const ProjectsSection = () => {
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               className="group"
             >
-              <div className="h-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-900/50">
+              <div className="h-full bg-white dark:bg-card border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-900/50 rounded-lg">
                 {/* Project Image */}
                 <Link href={`/projects/${project.id}`}>
-                  <div className="relative h-56 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+                  <div className="relative h-40 sm:h-48 md:h-56 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
                     <img
                       src={project.image || "/placeholder-logo.svg"}
                       alt={project.title}
@@ -79,18 +76,18 @@ const ProjectsSection = () => {
                 </Link>
 
                 {/* Project Content */}
-                <div className="p-6">
+                <div className="p-4 sm:p-5 md:p-6">
                   <Link href={`/projects/${project.id}`}>
-                    <h3 className="font-orbitron text-xl font-bold text-black dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                    <h3 className="font-orbitron text-base sm:text-lg md:text-xl font-bold text-black dark:text-white mb-2 sm:mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
                       {project.title}
                     </h3>
                   </Link>
-                  <p className="font-space-mono text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6 line-clamp-3">
+                  <p className="font-space-mono text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
                     {project.description}
                   </p>
 
                   {/* GitHub Link */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                  <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-800">
                     <Link
                       href={project.github}
                       target="_blank"
@@ -125,7 +122,7 @@ const ProjectsSection = () => {
           <Button
             asChild
             size="lg"
-            className="font-space-mono font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 px-8 py-3 rounded-lg group"
+            className="font-space-mono font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 px-6 sm:px-8 py-3 rounded-lg group text-sm sm:text-base h-12 sm:h-11"
           >
             <Link href="/projects" className="flex items-center gap-2">
               Explore More Projects

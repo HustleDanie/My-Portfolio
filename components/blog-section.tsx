@@ -64,7 +64,7 @@ export function BlogSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="blog" ref={ref} className="py-20 relative bg-white dark:bg-black overflow-hidden">
+    <section id="blog" ref={ref} className="py-20 relative bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,9 +74,6 @@ export function BlogSection() {
         >
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">Blog</h2>
           <div className="w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
-          <p className="max-w-2xl mx-auto text-black dark:text-gray-300">
-            Thoughts, insights, and technical deep dives into the world of artificial intelligence research.
-          </p>
         </motion.div>
 
         {/* Horizontal Collage Layout */}

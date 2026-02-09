@@ -96,7 +96,7 @@ export function TableOfContents() {
       </div>
 
       {/* Mobile version - collapsible */}
-      <div className="lg:hidden sticky top-20 z-20 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 mb-4">
+      <div className="lg:hidden sticky top-20 z-20 bg-white dark:bg-card border-b border-gray-200 dark:border-gray-700 mb-4">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center justify-between w-full p-4 text-sm font-medium text-gray-900 dark:text-gray-100"
