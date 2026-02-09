@@ -72,13 +72,13 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="about" ref={ref} className="py-10 md:py-20 relative bg-background">
+    <section id="about" ref={ref} className="py-10 md:py-20 relative bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -60, filter: "blur(10px)" }}
+            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -60, filter: "blur(10px)" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="mb-6 md:mb-12 text-center"
           >
             <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-4">About Me</h2>
@@ -87,9 +87,9 @@ export function AboutSection() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, x: -80, filter: "blur(10px)" }}
+            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -80, filter: "blur(10px)" }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-2 lg:order-1"
           >
             <div className="relative max-w-xs sm:max-w-sm md:max-w-md mx-auto lg:max-w-none">
@@ -112,9 +112,9 @@ export function AboutSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            initial={{ opacity: 0, x: 80, filter: "blur(10px)" }}
+            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: 80, filter: "blur(10px)" }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-1 lg:order-2"
           >
             <h3 className="font-orbitron text-lg sm:text-xl md:text-2xl font-bold mb-3 md:mb-4">AI Researcher & Engineer</h3>

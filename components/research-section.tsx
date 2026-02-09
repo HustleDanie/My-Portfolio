@@ -34,13 +34,13 @@ export function ResearchSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="research" ref={ref} className="py-12 md:py-20 relative bg-background">
+    <section id="research" ref={ref} className="py-12 md:py-20 relative bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -60, filter: "blur(10px)" }}
+            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -60, filter: "blur(10px)" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="mb-8 md:mb-12 text-center"
           >
             <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
@@ -54,12 +54,12 @@ export function ResearchSection() {
             {blogPosts.map((blog, index) => (
               <motion.div
                 key={blog.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -60, filter: "blur(10px)" }}
+                animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -60, filter: "blur(10px)" }}
+                transition={{ duration: 0.5, delay: 0.15 + index * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <Link href={blog.link}>
-                  <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg overflow-hidden group h-full p-4 sm:p-5 md:p-6 rounded-lg">
+                  <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg overflow-hidden group h-full p-4 sm:p-5 md:p-6 rounded-none">
                     <h3 className="font-orbitron text-base sm:text-lg font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                       {blog.title}
                     </h3>

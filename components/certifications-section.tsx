@@ -50,13 +50,13 @@ export function CertificationsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="certifications" ref={ref} className="py-12 md:py-20 relative">
+    <section id="certifications" ref={ref} className="py-12 md:py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: 60, filter: "blur(10px)" }}
+            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: 60, filter: "blur(10px)" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="mb-8 md:mb-16 text-center"
           >
             <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
@@ -69,12 +69,12 @@ export function CertificationsSection() {
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.credentialId}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              initial={{ opacity: 0, x: 60, filter: "blur(10px)" }}
+              animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: 60, filter: "blur(10px)" }}
+              transition={{ duration: 0.5, delay: 0.15 + index * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
               className="group"
             >
-              <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg h-full overflow-hidden group-hover:scale-[1.02] transform-gpu rounded-lg">
+              <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg h-full overflow-hidden group-hover:scale-[1.02] transform-gpu rounded-none">
                 <div className="relative w-full h-64 sm:h-80 md:h-96 bg-gray-100 dark:bg-gray-800">
                   <Image
                     src={cert.image || "/placeholder.svg"}
