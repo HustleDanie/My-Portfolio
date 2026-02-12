@@ -11,21 +11,21 @@ import Link from "next/link"
 const blogPosts = [
   {
     id: "1",
-    title: "DevAssist: Automated Code Migration",
-    subtitle: "Enterprise-grade automated code migration using LangGraph workflow with multi-agent system.",
-    link: "/projects/devassist",
+    title: "Oncology irAE Assistant",
+    subtitle: "AI-powered clinical decision support for detecting and triaging immune-related adverse events in oncology immunotherapy patients.",
+    link: "/projects/oncology-irae-detection",
   },
   {
     id: "2",
-    title: "StockAgentX: Financial Intelligence Platform",
-    subtitle: "AI-powered financial intelligence leveraging multi-agent orchestration and deep learning.",
-    link: "/projects/stockagentx",
+    title: "MedSecure: HIPAA-Compliant Summarization",
+    subtitle: "Secure medical document processing with automatic PII masking, entity extraction, and hallucination verification.",
+    link: "/projects/medsecure",
   },
   {
     id: "3",
-    title: "Vision Transformer Training",
-    subtitle: "Exploring Vision Transformers for image classification and understanding attention mechanisms.",
-    link: "/projects/vision-transformer-training",
+    title: "OmniSearch: Multimodal Discovery",
+    subtitle: "Multimodal product discovery engine using CLIP embeddings and vector search for cross-modal e-commerce.",
+    link: "/projects/omnisearch",
   },
 ]
 
@@ -44,7 +44,7 @@ export function ResearchSection() {
             className="mb-8 md:mb-12 text-center"
           >
             <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
-              Blogs
+              Featured Blogs
             </h2>
             <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto"></div>
           </motion.div>

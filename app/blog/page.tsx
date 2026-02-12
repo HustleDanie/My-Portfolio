@@ -6,40 +6,40 @@ import { ArrowRight } from "lucide-react"
 
 const blogPosts = [
   {
+    id: "knowledge-retrieval",
+    title: "Enterprise Knowledge Retrieval & Synthesis Platform",
+    description: "Building a production-ready GenAI/MLOps system for enterprise document search, synthesis, and RAG pipelines with hybrid search and citations.",
+    link: "/projects/knowledge-retrieval",
+  },
+  {
+    id: "omnisearch",
+    title: "OmniSearch: Multimodal Product Discovery",
+    description: "Creating a multimodal retrieval system using CLIP embeddings, Weaviate vector DB, and two-stage ranking for cross-modal e-commerce search.",
+    link: "/projects/omnisearch",
+  },
+  {
+    id: "medsecure",
+    title: "MedSecure: HIPAA-Compliant Medical Summarization",
+    description: "Designing a secure medical document processing platform with automatic PII masking, entity extraction, and hallucination verification.",
+    link: "/projects/medsecure",
+  },
+  {
+    id: "oncology-irae",
+    title: "Oncology irAE Clinical Safety Assistant",
+    description: "Building an AI-powered clinical decision support system for detecting and triaging immune-related adverse events in oncology patients.",
+    link: "/projects/oncology-irae-detection",
+  },
+  {
     id: "devassist",
-    title: "DevAssist",
+    title: "DevAssist: Multi-Agent Code Migration",
     description: "Enterprise-grade automated code migration using LangGraph workflow. Supports Python 2→3 and Flask→FastAPI migrations.",
-    link: "/projects/autonomous-agent-systems",
+    link: "/projects/devassist",
   },
   {
     id: "stockagentx",
-    title: "StockAgentX",
-    description: "AI-powered financial intelligence platform leveraging multi-agent orchestration, RAG pipeline, and deep learning.",
-    link: "/projects/autonomous-agent-systems",
-  },
-  {
-    id: "vision-transformer",
-    title: "Vision Transformer Training",
-    description: "Interactive exploration of Vision Transformers (ViT) for image classification with attention visualization.",
-    link: "/projects/vision-transformer-training",
-  },
-  {
-    id: "encoder-dynamics",
-    title: "Encoder Training Dynamics",
-    description: "Deep dive into transformer encoder architectures and their training dynamics for NLP tasks.",
-    link: "/projects/encoder-training-dynamics",
-  },
-  {
-    id: "decoder-modeling",
-    title: "Decoder Language Modeling",
-    description: "Exploring autoregressive language models and decoder-only transformer architectures.",
-    link: "/projects/decoder-language-modeling",
-  },
-  {
-    id: "deep-rl",
-    title: "Deep RL Playground",
-    description: "Interactive reinforcement learning experiments with DQN, PPO, and A3C algorithms.",
-    link: "/projects/deep-rl-playground",
+    title: "StockAgentX: Financial Intelligence Platform",
+    description: "AI-powered financial intelligence platform leveraging multi-agent orchestration, RAG pipeline, and deep learning for stock analysis.",
+    link: "/projects/stockagentx",
   },
 ]
 

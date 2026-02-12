@@ -6,12 +6,44 @@ import Link from "next/link"
 
 const projects = [
   {
+    id: "knowledge-retrieval",
+    title: "Enterprise Knowledge Retrieval",
+    description: "Production-ready GenAI/MLOps platform for enterprise document search, synthesis, and RAG pipelines with hybrid search.",
+    image: "/images/retrieval.png",
+    github: "https://github.com/HustleDanie/Enterprise-Knowledge-Retrieval-Synthesis-Platform",
+    link: "/projects/knowledge-retrieval",
+  },
+  {
+    id: "omnisearch",
+    title: "OmniSearch",
+    description: "Multimodal product discovery engine using CLIP embeddings. Search with text, images, or both for cross-modal e-commerce search.",
+    image: "/images/omnisearch.png",
+    github: "https://github.com/HustleDanie/OmniSearch-A-Multimodal-Retrieval-and-Ranking-System-for-Cross-Modal-E-Commerce-Product-Discovery",
+    link: "/projects/omnisearch",
+  },
+  {
+    id: "medsecure",
+    title: "MedSecure",
+    description: "HIPAA-compliant medical document summarization platform with automatic PII masking and AI-powered summarization.",
+    image: "/images/medsecure.png",
+    github: "https://github.com/HustleDanie/MedSecure---HIPAA-Compliant-Medical-Summary-Platform-",
+    link: "/projects/medsecure",
+  },
+  {
+    id: "oncology-irae-detection",
+    title: "Oncology irAE Assistant",
+    description: "AI-powered clinical decision support for detecting and triaging immune-related adverse events in oncology immunotherapy patients.",
+    image: "/images/oncology.png",
+    github: "https://github.com/HustleDanie/Oncology-irAE-Detection",
+    link: "/projects/oncology-irae-detection",
+  },
+  {
     id: "devassist",
     title: "DevAssist",
     description: "Enterprise-grade automated code migration using LangGraph workflow. Supports Python 2→3 and Flask→FastAPI migrations.",
     image: "/images/devassist.png",
     github: "https://github.com/HustleDanie/DevAssist",
-    link: "/projects/autonomous-agent-systems",
+    link: "/projects/devassist",
   },
   {
     id: "stockagentx",
@@ -19,63 +51,7 @@ const projects = [
     description: "AI-powered financial intelligence platform leveraging multi-agent orchestration, RAG pipeline, and deep learning.",
     image: "/images/stock.png",
     github: "https://github.com/HustleDanie/StockAgentX-Multi-Agent-Financial-Intelligence-Platform",
-    link: "/projects/autonomous-agent-systems",
-  },
-  {
-    id: "vision-transformer-training",
-    title: "Vision Transformer Training",
-    description: "Advanced training interface for Vision Transformers (ViT) with support for image classification and attention visualization.",
-    image: "/placeholder-logo.svg",
-    github: "#",
-    link: "/projects/vision-transformer-training",
-  },
-  {
-    id: "encoder-training-dynamics",
-    title: "Encoder Training Dynamics",
-    description: "Deep dive into transformer encoder architectures and their training dynamics for NLP tasks.",
-    image: "/placeholder-logo.svg",
-    github: "#",
-    link: "/projects/encoder-training-dynamics",
-  },
-  {
-    id: "decoder-language-modeling",
-    title: "Decoder Language Modeling",
-    description: "Exploring autoregressive language models and decoder-only transformer architectures.",
-    image: "/placeholder-logo.svg",
-    github: "#",
-    link: "/projects/decoder-language-modeling",
-  },
-  {
-    id: "deep-rl-playground",
-    title: "Deep RL Playground",
-    description: "Interactive platform for training and testing reinforcement learning agents across various environments.",
-    image: "/placeholder-logo.svg",
-    github: "#",
-    link: "/projects/deep-rl-playground",
-  },
-  {
-    id: "cnn-computer-vision",
-    title: "CNN Computer Vision",
-    description: "Comprehensive CNN training platform for image classification and computer vision tasks.",
-    image: "/placeholder-logo.svg",
-    github: "#",
-    link: "/projects/cnn-computer-vision",
-  },
-  {
-    id: "rnn-sequential-modeling",
-    title: "RNN Sequential Modeling",
-    description: "Exploring recurrent neural networks for sequential data processing and time series analysis.",
-    image: "/placeholder-logo.svg",
-    github: "#",
-    link: "/projects/rnn-sequential-modeling",
-  },
-  {
-    id: "lstm-long-term-dependencies",
-    title: "LSTM Long-Term Dependencies",
-    description: "Understanding LSTM networks and their ability to capture long-term dependencies in sequences.",
-    image: "/placeholder-logo.svg",
-    github: "#",
-    link: "/projects/lstm-long-term-dependencies",
+    link: "/projects/stockagentx",
   },
 ]
 
@@ -105,7 +81,7 @@ export default function ProjectsPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="h-full bg-white dark:bg-card border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-900/50 rounded-lg">
+                <div className="h-full bg-white dark:bg-card border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-900/50">
                   {/* Project Image */}
                   <Link href={project.link}>
                     <div className="relative h-40 sm:h-48 md:h-56 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">

@@ -8,28 +8,28 @@ import Link from "next/link"
 
 const featuredProjects = [
   {
-    id: "devassist",
-    title: "DevAssist",
+    id: "oncology-irae-detection",
+    title: "Oncology irAE Assistant",
     description:
-      "Enterprise-grade automated code migration using LangGraph workflow. Supports Python 2→3 and Flask→FastAPI migrations with a multi-agent system featuring Git Clone, Planner Agent, Coder Agent, and Tester Agent for seamless code transformation.",
-    image: "/images/devassist.png",
-    github: "https://github.com/HustleDanie/DevAssist",
+      "AI-powered clinical decision support system for detecting, classifying, and triaging immune-related adverse events (irAEs) in oncology immunotherapy patients using MedGemma and multi-organ analysis with CTCAE severity grading.",
+    image: "/images/oncology.png",
+    github: "https://github.com/HustleDanie/Oncology-irAE-Detection",
   },
   {
-    id: "stockagentx",
-    title: "StockAgentX",
+    id: "medsecure",
+    title: "MedSecure",
     description:
-      "AI-powered financial intelligence platform leveraging multi-agent orchestration, RAG pipeline, and deep learning (FinBERT, LSTM) for real-time stock market analysis with SEC filings integration and sentiment analysis.",
-    image: "/images/stock.png",
-    github: "https://github.com/HustleDanie/StockAgentX-Multi-Agent-Financial-Intelligence-Platform",
+      "HIPAA-compliant medical document summarization platform with automatic PII masking, medical entity extraction, AI-powered summarization using Llama-3, and hallucination verification for secure patient data processing.",
+    image: "/images/medsecure.png",
+    github: "https://github.com/HustleDanie/MedSecure---HIPAA-Compliant-Medical-Summary-Platform-",
   },
   {
-    id: "neural-network-playground",
-    title: "Neural Network Playground",
+    id: "omnisearch",
+    title: "OmniSearch",
     description:
-      "Hands-on exploration of neural architectures and training dynamics with real-time visualization and experimentation tools.",
-    image: "/placeholder-logo.svg",
-    github: "#",
+      "Multimodal product discovery engine using CLIP embeddings and vector search. Find products using text, images, or both with intelligent two-stage ranking for cross-modal e-commerce search.",
+    image: "/images/omnisearch.png",
+    github: "https://github.com/HustleDanie/OmniSearch-A-Multimodal-Retrieval-and-Ranking-System-for-Cross-Modal-E-Commerce-Product-Discovery",
   },
 ]
 
