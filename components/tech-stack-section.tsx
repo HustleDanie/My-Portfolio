@@ -12,7 +12,7 @@ const techStack = [
   { name: "R", logo: "https://cdn.simpleicons.org/r/276DC3" },
   { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus/00599C" },
   { name: "Julia", logo: "https://cdn.simpleicons.org/julia/9558B2" },
-  { name: "Rust", logo: "https://cdn.simpleicons.org/rust/ffffff" },
+  { name: "Scala", logo: "https://cdn.simpleicons.org/scala/DC322F" },
   { name: "Go", logo: "https://cdn.simpleicons.org/go/00ADD8" },
   
   // Row 2 - ML/AI Frameworks
@@ -22,8 +22,8 @@ const techStack = [
   { name: "scikit-learn", logo: "https://cdn.simpleicons.org/scikitlearn/F7931E" },
   { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
   { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
-  { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/ffffff" },
-  { name: "Anthropic", logo: "https://cdn.simpleicons.org/anthropic/ffffff" },
+  { name: "JAX", logo: "https://cdn.simpleicons.org/jax/A8B9CC" },
+  { name: "ONNX", logo: "https://cdn.simpleicons.org/onnx/005CED" },
   
   // Row 3 - Data & Cloud
   { name: "Pandas", logo: "https://cdn.simpleicons.org/pandas/150458" },
@@ -31,9 +31,9 @@ const techStack = [
   { name: "Apache Spark", logo: "https://cdn.simpleicons.org/apachespark/E25A1C" },
   { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
   { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/47A248" },
-  { name: "AWS", logo: "https://cdn.simpleicons.org/amazonaws/FF9900" },
-  { name: "Google Cloud", logo: "https://cdn.simpleicons.org/googlecloud/4285F4" },
-  { name: "Azure", logo: "https://cdn.simpleicons.org/microsoftazure/0078D4" },
+  { name: "Redis", logo: "https://cdn.simpleicons.org/redis/DC382D" },
+  { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
+  { name: "Elasticsearch", logo: "https://cdn.simpleicons.org/elasticsearch/005571" },
   
   // Row 4 - Tools & DevOps
   { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
@@ -43,7 +43,67 @@ const techStack = [
   { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
   { name: "MLflow", logo: "https://cdn.simpleicons.org/mlflow/0194E2" },
   { name: "Weights & Biases", logo: "https://cdn.simpleicons.org/weightsandbiases/FFBE00" },
-  { name: "Ray", logo: "https://cdn.simpleicons.org/ray/028CF0" },
+  { name: "DVC", logo: "https://cdn.simpleicons.org/dvc/13ADC7" },
+  
+  // Row 5 - Additional AI/ML Tools
+  { name: "Apache Kafka", logo: "https://cdn.simpleicons.org/apachekafka/231F20" },
+  { name: "Airflow", logo: "https://cdn.simpleicons.org/apacheairflow/017CEE" },
+  { name: "Grafana", logo: "https://cdn.simpleicons.org/grafana/F46800" },
+  { name: "Prometheus", logo: "https://cdn.simpleicons.org/prometheus/E6522C" },
+  { name: "Apache Flink", logo: "https://cdn.simpleicons.org/apacheflink/E6526F" },
+  { name: "Streamlit", logo: "https://cdn.simpleicons.org/streamlit/FF4B4B" },
+  { name: "Gradio", logo: "https://cdn.simpleicons.org/gradio/F97316" },
+  { name: "Flask", logo: "https://cdn.simpleicons.org/flask/000000" },
+  
+  // Row 6 - More Tools
+  { name: "OpenCV", logo: "https://cdn.simpleicons.org/opencv/5C3EE8" },
+  { name: "Plotly", logo: "https://cdn.simpleicons.org/plotly/3F4F75" },
+  { name: "SciPy", logo: "https://cdn.simpleicons.org/scipy/8CAAE6" },
+  { name: "Polars", logo: "https://cdn.simpleicons.org/polars/CD792C" },
+  { name: "dbt", logo: "https://cdn.simpleicons.org/dbt/FF694B" },
+  { name: "Snowflake", logo: "https://cdn.simpleicons.org/snowflake/29B5E8" },
+  { name: "Databricks", logo: "https://cdn.simpleicons.org/databricks/FF3621" },
+  { name: "Terraform", logo: "https://cdn.simpleicons.org/terraform/844FBA" },
+  
+  // Row 7 - Cloud & AI Providers
+  { name: "AWS", logo: "https://cdn.simpleicons.org/amazonwebservices/FF9900" },
+  { name: "Google Cloud", logo: "https://cdn.simpleicons.org/googlecloud/4285F4" },
+  { name: "Azure", logo: "https://cdn.simpleicons.org/microsoftazure/0078D4" },
+  { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+  { name: "Google Gemini", logo: "https://cdn.simpleicons.org/googlegemini/8E75B2" },
+  { name: "Anthropic", logo: "https://cdn.simpleicons.org/anthropic/191919" },
+  { name: "Cohere", logo: "https://cdn.simpleicons.org/cohere/39594D" },
+  { name: "Replicate", logo: "https://cdn.simpleicons.org/replicate/000000" },
+  
+  // Row 8 - Additional Essential Tools
+  { name: "Linux", logo: "https://cdn.simpleicons.org/linux/FCC624" },
+  { name: "NVIDIA", logo: "https://cdn.simpleicons.org/nvidia/76B900" },
+  { name: "CUDA", logo: "https://cdn.simpleicons.org/nvidia/76B900" },
+  { name: "Neo4j", logo: "https://cdn.simpleicons.org/neo4j/4581C3" },
+  { name: "Weaviate", logo: "https://cdn.simpleicons.org/weaviate/00D1A0" },
+  { name: "LlamaIndex", logo: "https://cdn.simpleicons.org/llamaindex/6B5BFF" },
+  { name: "Celery", logo: "https://cdn.simpleicons.org/celery/37814A" },
+  { name: "RabbitMQ", logo: "https://cdn.simpleicons.org/rabbitmq/FF6600" },
+  
+  // Row 9 - Web & API Tools
+  { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs/000000" },
+  { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
+  { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs/339933" },
+  { name: "Triton", logo: "https://cdn.simpleicons.org/nvidia/76B900" },
+  { name: "GraphQL", logo: "https://cdn.simpleicons.org/graphql/E10098" },
+  { name: "Nginx", logo: "https://cdn.simpleicons.org/nginx/009639" },
+  { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3FCF8E" },
+  { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase/DD2C00" },
+  
+  // Row 10 - More AI/Research Tools
+  { name: "Transformers", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+  { name: "BeautifulSoup", logo: "https://cdn.simpleicons.org/python/3776AB" },
+  { name: "Scrapy", logo: "https://cdn.simpleicons.org/scrapy/60A839" },
+  { name: "Pytest", logo: "https://cdn.simpleicons.org/pytest/0A9EDC" },
+  { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions/2088FF" },
+  { name: "CircleCI", logo: "https://cdn.simpleicons.org/circleci/343434" },
+  { name: "Prefect", logo: "https://cdn.simpleicons.org/prefect/024DFD" },
+  { name: "Milvus", logo: "https://cdn.simpleicons.org/milvus/00A1EA" },
 ]
 
 export function TechStackSection() {
