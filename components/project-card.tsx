@@ -62,7 +62,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       transition={{ duration: 0.5 }}
       className="group h-full"
     >
-      <Card className="h-full bg-white dark:bg-card backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:border-gray-400/50 dark:hover:border-gray-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-white/5 flex flex-col overflow-hidden group-hover:scale-[1.02] transform-gpu">
+      <Card className="h-full bg-white dark:bg-card backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:border-gray-400/50 dark:hover:border-gray-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-white/5 flex flex-col overflow-hidden group-hover:scale-[1.02] transform-gpu rounded-xl md:rounded-none shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.08)] md:shadow-none">
         {/* Enhanced Project Image */}
         <div className="relative aspect-[16/10] overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800" />

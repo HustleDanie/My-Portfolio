@@ -74,7 +74,7 @@ export function CertificationsSection() {
               transition={{ duration: 0.5, delay: 0.15 + index * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
               className="group"
             >
-              <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg h-full overflow-hidden group-hover:scale-[1.02] transform-gpu rounded-none">
+              <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg h-full overflow-hidden group-hover:scale-[1.02] transform-gpu rounded-xl md:rounded-none shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.08)] md:shadow-none">
                 <div className="relative w-full h-64 sm:h-80 md:h-96 bg-gray-100 dark:bg-gray-800">
                   <Image
                     src={cert.image || "/placeholder.svg"}
