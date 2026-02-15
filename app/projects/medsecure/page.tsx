@@ -73,14 +73,13 @@ export default function MedSecurePage() {
         {/* Video Section */}
         <section className="mb-16">
           <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
-            <video
-              src="/images/medsecure.mp4"
-              controls
-              className="w-full h-full object-cover"
-              poster="/images/medsecure.png"
-            >
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+              src="https://www.youtube.com/embed/TxQU7WaBcMY"
+              title="MedSecure Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
           </div>
           <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
             Watch MedSecure process medical documents with automatic PII masking and summarization
