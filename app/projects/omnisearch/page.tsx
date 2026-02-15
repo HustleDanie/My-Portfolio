@@ -70,6 +70,23 @@ export default function OmniSearchPage() {
           </div>
         </header>
 
+        {/* Video Section */}
+        <section className="mb-16">
+          <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+            <video
+              src="/images/omnisearch.mp4"
+              controls
+              className="w-full h-full object-cover"
+              poster="/images/omnisearch.png"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
+            Watch OmniSearch perform multimodal product discovery with text, image, and combined queries
+          </p>
+        </section>
+
         {/* Key Value Proposition */}
         <section className="mb-12">
           <div className="p-6 rounded-xl border-2 border-blue-400 dark:border-blue-500 bg-blue-50/50 dark:bg-blue-900/10">

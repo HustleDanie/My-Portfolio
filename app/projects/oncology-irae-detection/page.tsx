@@ -70,6 +70,23 @@ export default function OncologyIrAEPage() {
           </div>
         </header>
 
+        {/* Video Section */}
+        <section className="mb-16">
+          <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+            <video
+              src="/images/oncology.mp4"
+              controls
+              className="w-full h-full object-cover"
+              poster="/images/oncology.png"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
+            Watch the Oncology irAE Clinical Safety Assistant detect and triage immune-related adverse events
+          </p>
+        </section>
+
         {/* Safety Disclaimer */}
         <section className="mb-12">
           <div className="p-6 rounded-xl border-2 border-amber-400 dark:border-amber-500 bg-amber-50/50 dark:bg-amber-900/10">

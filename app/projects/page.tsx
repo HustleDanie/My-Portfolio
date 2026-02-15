@@ -45,14 +45,6 @@ const projects = [
     github: "https://github.com/HustleDanie/DevAssist",
     link: "/projects/devassist",
   },
-  {
-    id: "stockagentx",
-    title: "StockAgentX",
-    description: "AI-powered financial intelligence platform leveraging multi-agent orchestration, RAG pipeline, and deep learning.",
-    image: "/images/stock.png",
-    github: "https://github.com/HustleDanie/StockAgentX-Multi-Agent-Financial-Intelligence-Platform",
-    link: "/projects/stockagentx",
-  },
 ]
 
 export default function ProjectsPage() {

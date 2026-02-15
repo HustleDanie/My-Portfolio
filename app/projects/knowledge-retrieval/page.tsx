@@ -70,6 +70,23 @@ export default function KnowledgeRetrievalPage() {
           </div>
         </header>
 
+        {/* Video Section */}
+        <section className="mb-16">
+          <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+            <video
+              src="/images/retrieval.mp4"
+              controls
+              className="w-full h-full object-cover"
+              poster="/images/retrieval.png"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
+            Watch the Enterprise Knowledge Retrieval platform in action with document search and RAG synthesis
+          </p>
+        </section>
+
         {/* Key Value Proposition */}
         <section className="mb-12">
           <div className="p-6 rounded-xl border-2 border-blue-400 dark:border-blue-500 bg-gradient-to-br from-blue-50/50 to-cyan-50/50 dark:from-blue-900/10 dark:to-cyan-900/10">

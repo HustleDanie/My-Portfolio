@@ -35,12 +35,6 @@ const blogPosts = [
     description: "Enterprise-grade automated code migration using LangGraph workflow. Supports Python 2→3 and Flask→FastAPI migrations.",
     link: "/projects/devassist",
   },
-  {
-    id: "stockagentx",
-    title: "StockAgentX: Financial Intelligence Platform",
-    description: "AI-powered financial intelligence platform leveraging multi-agent orchestration, RAG pipeline, and deep learning for stock analysis.",
-    link: "/projects/stockagentx",
-  },
 ]
 
 export default function BlogPage() {
