@@ -59,7 +59,7 @@ export function ResearchSection() {
                 transition={{ duration: 0.5, delay: 0.15 + index * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <Link href={blog.link}>
-                  <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg overflow-hidden group h-full p-4 sm:p-5 md:p-6 rounded-none">
+                  <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg overflow-hidden group h-full p-4 sm:p-5 md:p-6 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.08)]">
                     <h3 className="font-orbitron text-base sm:text-lg font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                       {blog.title}
                     </h3>

@@ -63,7 +63,7 @@ export default function BlogPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Link href={post.link}>
-                  <div className="bg-card border border-border rounded-lg p-4 sm:p-5 md:p-6 h-full hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg group">
+                  <div className="bg-card border border-border rounded-xl p-4 sm:p-5 md:p-6 h-full hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg group shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.08)]">
                     <h3 className="font-orbitron text-base sm:text-lg md:text-xl font-semibold text-black dark:text-white mb-2 sm:mb-3 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
                       {post.title}
                     </h3>
