@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowDown, Github, Twitter, Linkedin, FileText, Plus, X } from "lucide-react"
+import { ArrowDown, Github, Twitter, Linkedin, Plus, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TypewriterEffect } from "@/components/typewriter-effect"
 import Link from "next/link"
@@ -29,15 +29,6 @@ export function HeroSection() {
         transition={{ delay: 2.5, duration: 0.8 }}
         className="hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-20 flex-col gap-4"
       >
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-3 bg-white/10 dark:bg-black/10 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 group"
-          title="Download Resume"
-        >
-          <FileText className="h-5 w-5 text-black dark:text-white group-hover:scale-110 transition-transform" />
-        </a>
         <a
           href="https://github.com"
           target="_blank"
@@ -133,24 +124,6 @@ export function HeroSection() {
                   <Github className="h-5 w-5 text-white" />
                 </div>
               </motion.a>
-
-              <motion.a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 20, scale: 0.8 }}
-                transition={{ delay: 0.15 }}
-                className="absolute bottom-[17rem] right-0 flex items-center gap-3"
-              >
-                <span className="px-3 py-1.5 bg-card rounded-lg text-sm font-medium text-foreground shadow-lg">
-                  Resume
-                </span>
-                <div className="p-3 bg-emerald-500 rounded-full shadow-lg">
-                  <FileText className="h-5 w-5 text-white" />
-                </div>
-              </motion.a>
             </>
           )}
         </AnimatePresence>
@@ -206,12 +179,12 @@ export function HeroSection() {
           transition={{ delay: 1.5, duration: 0.8 }}
           className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center mb-24 md:mb-0 px-4"
         >
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+          <a href="#contact" className="w-full sm:w-auto">
             <Button
               size="lg"
               className="font-space-mono bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 w-full text-sm sm:text-base h-12 sm:h-11"
             >
-              View Resume
+              Get in Touch
             </Button>
           </a>
           <Link href="/projects" className="w-full sm:w-auto">

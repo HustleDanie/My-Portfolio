@@ -19,30 +19,6 @@ const certifications = [
     description:
       "Comprehensive specialization covering neural networks, deep learning, and practical applications in computer vision and natural language processing.",
   },
-  {
-    title: "Deep Learning Specialization",
-    issuer: "Coursera • DeepLearning.AI",
-    date: "2024",
-    status: "Completed",
-    credentialId: "DL2024-UC-790",
-    skills: ["Neural Networks", "Deep Learning", "TensorFlow", "Computer Vision", "NLP", "CNN", "RNN"],
-    image: "/images/coursera-deep-learning-cert.png",
-    link: "https://coursera.org/verify/specialization/XXXXXXXX",
-    description:
-      "Comprehensive specialization covering neural networks, deep learning, and practical applications in computer vision and natural language processing.",
-  },
-  {
-    title: "Deep Learning Specialization",
-    issuer: "Coursera • DeepLearning.AI",
-    date: "2024",
-    status: "Completed",
-    credentialId: "DL2024-UC-791",
-    skills: ["Neural Networks", "Deep Learning", "TensorFlow", "Computer Vision", "NLP", "CNN", "RNN"],
-    image: "/images/coursera-deep-learning-cert.png",
-    link: "https://coursera.org/verify/specialization/XXXXXXXX",
-    description:
-      "Comprehensive specialization covering neural networks, deep learning, and practical applications in computer vision and natural language processing.",
-  },
 ]
 
 export function CertificationsSection() {
