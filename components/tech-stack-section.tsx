@@ -66,7 +66,7 @@ export function TechStackSection() {
             <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto"></div>
           </motion.div>
 
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3 sm:gap-4 md:gap-8">
+          <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-3 sm:gap-4 md:gap-8">
             {techStack.map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -82,7 +82,7 @@ export function TechStackSection() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-xs text-muted-foreground font-space-mono text-center hidden sm:block">
+                <span className="text-[10px] sm:text-xs text-muted-foreground font-space-mono text-center truncate w-full">
                   {tech.name}
                 </span>
               </motion.div>
