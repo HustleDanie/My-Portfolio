@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useRef, useState } from "react"
 import { useInView } from "framer-motion"
 import { Card } from "@/components/ui/card"
-import { X, ExternalLink, Award, Calendar, CheckCircle } from "lucide-react"
+import { X, ExternalLink, Award, Calendar, CheckCircle, ZoomIn } from "lucide-react"
 import Image from "next/image"
 
 const certifications = [
@@ -54,6 +54,7 @@ export function CertificationsSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [selectedCert, setSelectedCert] = useState<Certification | null>(null)
+  const [showFullImage, setShowFullImage] = useState(false)
 
   return (
     <section id="certifications" ref={ref} className="py-12 md:py-20 relative overflow-hidden">
@@ -117,7 +118,7 @@ export function CertificationsSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm"
-            onClick={() => setSelectedCert(null)}
+            onClick={() => { setSelectedCert(null); setShowFullImage(false); }}
           >
             <motion.div
               initial={{ opacity: 0, y: "100%" }}
@@ -134,7 +135,7 @@ export function CertificationsSection() {
 
               {/* Sticky close button */}
               <button
-                onClick={() => setSelectedCert(null)}
+                onClick={() => { setSelectedCert(null); setShowFullImage(false); }}
                 className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 p-2 bg-black/20 hover:bg-black/40 rounded-full backdrop-blur-sm transition-colors"
               >
                 <X className="h-5 w-5 text-white" />
@@ -142,15 +143,26 @@ export function CertificationsSection() {
 
               {/* Scrollable content */}
               <div className="overflow-y-auto flex-1">
-                {/* Modal Header */}
-                <div className="relative h-36 sm:h-48 md:h-56 overflow-hidden">
+                {/* Modal Header with clickable image */}
+                <div 
+                  className="relative h-36 sm:h-48 md:h-56 overflow-hidden cursor-pointer group/image"
+                  onClick={() => setShowFullImage(true)}
+                >
                   <Image
                     src={selectedCert.image || "/placeholder.svg"}
                     alt={selectedCert.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover/image:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  
+                  {/* Tap to view full indicator */}
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center gap-1.5 px-2 py-1 bg-black/40 backdrop-blur-sm rounded-full text-white text-xs font-space-mono opacity-80 group-hover/image:opacity-100 transition-opacity">
+                    <ZoomIn className="h-3 w-3" />
+                    <span className="hidden sm:inline">View Full Image</span>
+                    <span className="sm:hidden">Tap to view</span>
+                  </div>
+                  
                   <div className="absolute bottom-3 sm:bottom-4 left-4 right-4">
                     <h3 className="font-orbitron text-lg sm:text-xl md:text-2xl font-bold text-white mb-0.5 sm:mb-1">
                       {selectedCert.title}
@@ -236,6 +248,60 @@ export function CertificationsSection() {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Full-screen image viewer */}
+      <AnimatePresence>
+        {showFullImage && selectedCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black flex items-center justify-center"
+            onClick={() => setShowFullImage(false)}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowFullImage(false)}
+              className="absolute top-4 right-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-colors"
+            >
+              <X className="h-6 w-6 text-white" />
+            </button>
+
+            {/* Hint text */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-xs sm:text-sm font-space-mono">
+              Tap anywhere to close
+            </div>
+
+            {/* Full image container */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full h-full p-4 sm:p-8 md:p-12"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selectedCert.image || "/placeholder.svg"}
+                alt={selectedCert.title}
+                fill
+                className="object-contain"
+                onClick={() => setShowFullImage(false)}
+              />
+            </motion.div>
+
+            {/* Title overlay at bottom */}
+            <div className="absolute bottom-12 sm:bottom-16 left-4 right-4 text-center">
+              <h4 className="font-orbitron text-sm sm:text-base text-white font-semibold">
+                {selectedCert.title}
+              </h4>
+              <p className="font-space-mono text-xs text-white/60 mt-1">
+                {selectedCert.issuer}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
