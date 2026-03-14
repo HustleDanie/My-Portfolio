@@ -9,6 +9,25 @@ import Image from "next/image"
 
 const certifications = [
   {
+    title: "B.Sc. Computer Science",
+    issuer: "University of Ibadan",
+    date: "2024",
+    status: "Completed",
+    credentialId: "UI-CS-2024",
+    skills: ["Data Structures", "Algorithms", "Software Engineering", "Database Systems", "Computer Networks", "AI/ML", "Operating Systems"],
+    image: "/images/Statementofresult.jpg",
+    link: "",
+    description:
+      "Bachelor of Science degree in Computer Science from one of Nigeria's premier universities, providing a strong foundation in computing theory and practical software development.",
+    achievements: [
+      "Completed comprehensive coursework in core computer science fundamentals",
+      "Developed proficiency in programming languages and software development",
+      "Studied advanced topics in artificial intelligence and machine learning",
+      "Gained expertise in database design and management systems",
+      "Built practical projects applying theoretical knowledge to real-world problems",
+    ],
+  },
+  {
     title: "Deep Learning Specialization",
     issuer: "Coursera • DeepLearning.AI",
     date: "2024",
@@ -194,15 +213,17 @@ export function CertificationsSection() {
                 </div>
 
                 {/* Verify Link */}
-                <a
-                  href={selectedCert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-black dark:bg-white text-white dark:text-black font-space-mono text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Verify Credential
-                </a>
+                {selectedCert.link && (
+                  <a
+                    href={selectedCert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-black dark:bg-white text-white dark:text-black font-space-mono text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Verify Credential
+                  </a>
+                )}
               </div>
             </motion.div>
           </motion.div>
