@@ -116,114 +116,124 @@ export function CertificationsSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm"
             onClick={() => setSelectedCert(null)}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white dark:bg-gray-900 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              initial={{ opacity: 0, y: "100%" }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="bg-white dark:bg-gray-900 w-full sm:max-w-2xl sm:mx-4 max-h-[85vh] sm:max-h-[90vh] overflow-hidden shadow-2xl rounded-t-2xl sm:rounded-xl flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header */}
-              <div className="relative h-48 sm:h-56 overflow-hidden rounded-t-xl">
-                <Image
-                  src={selectedCert.image || "/placeholder.svg"}
-                  alt={selectedCert.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <button
-                  onClick={() => setSelectedCert(null)}
-                  className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-colors"
-                >
-                  <X className="h-5 w-5 text-white" />
-                </button>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="font-orbitron text-xl sm:text-2xl font-bold text-white mb-1">
-                    {selectedCert.title}
-                  </h3>
-                  <p className="font-space-mono text-sm text-gray-300">
-                    {selectedCert.issuer}
-                  </p>
-                </div>
+              {/* Drag indicator for mobile */}
+              <div className="sm:hidden flex justify-center pt-3 pb-1">
+                <div className="w-10 h-1 bg-gray-300 dark:bg-gray-600 rounded-full" />
               </div>
 
-              {/* Modal Content */}
-              <div className="p-6 space-y-6">
-                {/* Status and Date */}
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 text-sm font-space-mono text-gray-600 dark:text-gray-400">
-                    <Calendar className="h-4 w-4" />
-                    <span>{selectedCert.date}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm font-space-mono text-green-600 dark:text-green-400">
-                    <CheckCircle className="h-4 w-4" />
-                    <span>{selectedCert.status}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm font-space-mono text-gray-600 dark:text-gray-400">
-                    <Award className="h-4 w-4" />
-                    <span>ID: {selectedCert.credentialId}</span>
-                  </div>
-                </div>
+              {/* Sticky close button */}
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 p-2 bg-black/20 hover:bg-black/40 rounded-full backdrop-blur-sm transition-colors"
+              >
+                <X className="h-5 w-5 text-white" />
+              </button>
 
-                {/* Description */}
-                <div>
-                  <h4 className="font-orbitron text-sm font-semibold text-black dark:text-white mb-2">
-                    About This Certification
-                  </h4>
-                  <p className="font-space-mono text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {selectedCert.description}
-                  </p>
-                </div>
-
-                {/* Achievements */}
-                <div>
-                  <h4 className="font-orbitron text-sm font-semibold text-black dark:text-white mb-3">
-                    What I Achieved
-                  </h4>
-                  <ul className="space-y-2">
-                    {selectedCert.achievements?.map((achievement, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm font-space-mono text-gray-600 dark:text-gray-400">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Skills */}
-                <div>
-                  <h4 className="font-orbitron text-sm font-semibold text-black dark:text-white mb-3">
-                    Skills Covered
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedCert.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 text-xs font-space-mono bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+              {/* Scrollable content */}
+              <div className="overflow-y-auto flex-1">
+                {/* Modal Header */}
+                <div className="relative h-36 sm:h-48 md:h-56 overflow-hidden">
+                  <Image
+                    src={selectedCert.image || "/placeholder.svg"}
+                    alt={selectedCert.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute bottom-3 sm:bottom-4 left-4 right-4">
+                    <h3 className="font-orbitron text-lg sm:text-xl md:text-2xl font-bold text-white mb-0.5 sm:mb-1">
+                      {selectedCert.title}
+                    </h3>
+                    <p className="font-space-mono text-xs sm:text-sm text-gray-300">
+                      {selectedCert.issuer}
+                    </p>
                   </div>
                 </div>
 
-                {/* Verify Link */}
-                {selectedCert.link && (
-                  <a
-                    href={selectedCert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-black dark:bg-white text-white dark:text-black font-space-mono text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                    Verify Credential
-                  </a>
-                )}
+                {/* Modal Content */}
+                <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+                  {/* Status and Date */}
+                  <div className="flex flex-wrap gap-2 sm:gap-4">
+                    <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-space-mono text-gray-600 dark:text-gray-400">
+                      <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      <span>{selectedCert.date}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-space-mono text-green-600 dark:text-green-400">
+                      <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      <span>{selectedCert.status}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-space-mono text-gray-600 dark:text-gray-400">
+                      <Award className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      <span className="truncate max-w-[150px] sm:max-w-none">ID: {selectedCert.credentialId}</span>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <div>
+                    <h4 className="font-orbitron text-xs sm:text-sm font-semibold text-black dark:text-white mb-1.5 sm:mb-2">
+                      About This Certification
+                    </h4>
+                    <p className="font-space-mono text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {selectedCert.description}
+                    </p>
+                  </div>
+
+                  {/* Achievements */}
+                  <div>
+                    <h4 className="font-orbitron text-xs sm:text-sm font-semibold text-black dark:text-white mb-2 sm:mb-3">
+                      What I Achieved
+                    </h4>
+                    <ul className="space-y-1.5 sm:space-y-2">
+                      {selectedCert.achievements?.map((achievement, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm font-space-mono text-gray-600 dark:text-gray-400">
+                          <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Skills */}
+                  <div>
+                    <h4 className="font-orbitron text-xs sm:text-sm font-semibold text-black dark:text-white mb-2 sm:mb-3">
+                      Skills Covered
+                    </h4>
+                    <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-1.5 sm:gap-2">
+                      {selectedCert.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-space-mono bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-center truncate"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Verify Link */}
+                  {selectedCert.link && (
+                    <a
+                      href={selectedCert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full sm:w-auto sm:inline-flex px-4 py-3 sm:py-2 bg-black dark:bg-white text-white dark:text-black font-space-mono text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      Verify Credential
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           </motion.div>
