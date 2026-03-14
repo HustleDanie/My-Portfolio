@@ -125,7 +125,7 @@ export function CertificationsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="bg-white dark:bg-gray-900 w-full sm:max-w-2xl sm:mx-4 max-h-[85vh] sm:max-h-[90vh] overflow-hidden shadow-2xl rounded-t-2xl sm:rounded-xl flex flex-col"
+              className="bg-white dark:bg-gray-900 w-full sm:max-w-2xl sm:mx-4 max-h-[85vh] sm:max-h-[90vh] overflow-hidden shadow-2xl rounded-t-2xl sm:rounded-none flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Drag indicator for mobile */}
