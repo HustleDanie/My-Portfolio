@@ -12,6 +12,13 @@ const projects = [
     image: "/images/retrieval.png",
     github: "https://github.com/HustleDanie/Enterprise-Knowledge-Retrieval-Synthesis-Platform",
     link: "/projects/knowledge-retrieval",
+    techStack: [
+      { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+      { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
+      { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
+      { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+      { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
+    ],
   },
   {
     id: "omnisearch",
@@ -20,6 +27,13 @@ const projects = [
     image: "/images/omnisearch.png",
     github: "https://github.com/HustleDanie/OmniSearch-A-Multimodal-Retrieval-and-Ranking-System-for-Cross-Modal-E-Commerce-Product-Discovery",
     link: "/projects/omnisearch",
+    techStack: [
+      { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+      { name: "PyTorch", logo: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
+      { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+      { name: "Weaviate", logo: "https://cdn.simpleicons.org/weaviate/00D1A0" },
+      { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+    ],
   },
   {
     id: "medsecure",
@@ -28,6 +42,13 @@ const projects = [
     image: "/images/medsecure.png",
     github: "https://github.com/HustleDanie/MedSecure---HIPAA-Compliant-Medical-Summary-Platform-",
     link: "/projects/medsecure",
+    techStack: [
+      { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+      { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+      { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+      { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
+      { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
+    ],
   },
   {
     id: "oncology-irae-detection",
@@ -36,6 +57,13 @@ const projects = [
     image: "/images/oncology.png",
     github: "https://github.com/HustleDanie/Oncology-irAE-Detection",
     link: "/projects/oncology-irae-detection",
+    techStack: [
+      { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+      { name: "TensorFlow", logo: "https://cdn.simpleicons.org/tensorflow/FF6F00" },
+      { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+      { name: "Streamlit", logo: "https://cdn.simpleicons.org/streamlit/FF4B4B" },
+      { name: "Google Cloud", logo: "https://cdn.simpleicons.org/googlecloud/4285F4" },
+    ],
   },
   {
     id: "devassist",
@@ -44,6 +72,13 @@ const projects = [
     image: "/images/devassist.png",
     github: "https://github.com/HustleDanie/DevAssist",
     link: "/projects/devassist",
+    techStack: [
+      { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+      { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
+      { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+      { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+      { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
+    ],
   },
 ]
 
@@ -96,9 +131,28 @@ export default function ProjectsPage() {
                         {project.title}
                       </h3>
                     </Link>
-                    <p className="font-space-mono text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
+                    <p className="font-space-mono text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
                       {project.description}
                     </p>
+
+                    {/* Tech Stack Icons */}
+                    <div className="flex items-center gap-2 mb-4 sm:mb-6">
+                      {project.techStack.map((tech) => (
+                        <div
+                          key={tech.name}
+                          className="relative group/tech"
+                        >
+                          <img
+                            src={tech.logo}
+                            alt={tech.name}
+                            className="w-5 h-5 sm:w-6 sm:h-6 opacity-70 hover:opacity-100 transition-opacity dark:invert-0"
+                          />
+                          <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-[10px] font-space-mono rounded opacity-0 group-hover/tech:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                            {tech.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
 
                     {/* Links */}
                     <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-800">
