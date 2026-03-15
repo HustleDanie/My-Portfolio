@@ -117,7 +117,7 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-1 lg:order-2"
           >
-            <h3 className="font-orbitron text-lg sm:text-xl md:text-2xl font-bold mb-3 md:mb-4">AI Applications Engineer</h3>
+            <h3 className="font-orbitron text-xl sm:text-xl md:text-2xl font-bold mb-3 md:mb-4 text-center sm:text-left">AI Applications Engineer</h3>
             <HighlightedText
               text="Hi, I'm Uche Maduabuchi Daniel, an AI Applications Engineer with a degree from the University of Ibadan. I specialize in building AI-powered mobile apps, web applications, and agentic AI systems that deliver real-world value."
               keywords={[
@@ -127,7 +127,7 @@ export function AboutSection() {
                 "agentic AI systems",
                 "real-world value",
               ]}
-              className="text-gray-700 dark:text-gray-300 mb-3 md:mb-6 font-space-mono text-xs sm:text-sm md:text-base text-left md:text-justify leading-relaxed"
+              className="text-gray-700 dark:text-gray-300 mb-3 md:mb-6 font-space-mono text-sm sm:text-sm md:text-base text-center sm:text-left md:text-justify leading-loose sm:leading-relaxed"
             />
             <HighlightedText
               text="I'm passionate about turning AI capabilities into production-ready products that users love. Beyond building, I enjoy video games, exploring new ideas, and experimenting with emerging technologies. Always eager to push boundaries and ship something new."
@@ -137,7 +137,7 @@ export function AboutSection() {
                 "push boundaries",
                 "ship something new",
               ]}
-              className="text-gray-700 dark:text-gray-300 mb-4 md:mb-8 text-xs sm:text-sm md:text-base font-space-mono text-left md:text-justify leading-relaxed"
+              className="text-gray-700 dark:text-gray-300 mb-4 md:mb-8 text-sm sm:text-sm md:text-base font-space-mono text-center sm:text-left md:text-justify leading-loose sm:leading-relaxed"
             />
           </motion.div>
         </div>
