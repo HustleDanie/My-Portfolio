@@ -82,7 +82,7 @@ export function CertificationsSection() {
               className="group cursor-pointer"
               onClick={() => setSelectedCert(cert)}
             >
-              <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 h-full overflow-hidden group-hover:scale-[1.02] transform-gpu rounded-none shadow-[0_0_20px_rgba(59,130,246,0.3)] dark:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_35px_rgba(59,130,246,0.6)]">
+              <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 h-full overflow-hidden group-hover:scale-[1.02] transform-gpu rounded-none hover:shadow-lg">
                 <div className="relative w-full h-64 sm:h-80 md:h-96 bg-gray-100 dark:bg-gray-800">
                   <Image
                     src={cert.image || "/placeholder.svg"}
