@@ -151,7 +151,7 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
           className="mb-3 md:mb-6"
         >
-          <h2 className="font-space-mono text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] uppercase text-gray-600 dark:text-gray-400 mb-2">
+          <h2 className="font-space-mono text-sm sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] uppercase text-gray-600 dark:text-gray-400 mb-2">
             AI Applications Engineer
           </h2>
         </motion.div>
@@ -167,7 +167,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-xl mb-6 md:mb-10 font-space-mono leading-relaxed px-2"
+          className="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 text-base sm:text-base md:text-xl mb-6 md:mb-10 font-space-mono leading-relaxed px-2"
         >
           I specialize in integrating AI into web and mobile experiences, and building autonomous agentic systems.
         </motion.p>
