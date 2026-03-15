@@ -38,11 +38,11 @@ function HighlightedText({ text, keywords, className }: HighlightedTextProps) {
               animate={{
                 backgroundColor: isHighlighted
                   ? [
-                      "rgba(0, 0, 0, 0.15)",
-                      "rgba(0, 0, 0, 0.25)",
-                      "rgba(0, 0, 0, 0.15)",
+                      "rgba(99, 102, 241, 0.2)",
+                      "rgba(99, 102, 241, 0.35)",
+                      "rgba(99, 102, 241, 0.2)",
                     ]
-                  : "rgba(0, 0, 0, 0.05)",
+                  : "rgba(99, 102, 241, 0.1)",
                 scale: isHighlighted ? [1, 1.02, 1] : 1,
               }}
               transition={{
@@ -53,8 +53,8 @@ function HighlightedText({ text, keywords, className }: HighlightedTextProps) {
               }}
               className={`inline-block px-1 rounded transition-colors ${
                 isHighlighted
-                  ? "font-semibold text-black dark:text-white"
-                  : "text-gray-800 dark:text-gray-200"
+                  ? "font-semibold text-indigo-700 dark:text-indigo-300"
+                  : "text-indigo-600 dark:text-indigo-400"
               }`}
             >
               {part}
