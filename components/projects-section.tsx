@@ -1,10 +1,32 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 import { ArrowRight, Github, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+
+function TechIcon({ name, logo, className }: { name: string; logo: string; className?: string }) {
+  const [failed, setFailed] = useState(false)
+  const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
+
+  if (failed) {
+    return (
+      <div className={`flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded text-[8px] sm:text-[10px] font-bold text-gray-600 dark:text-gray-300 font-space-mono ${className}`}>
+        {initials}
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={logo}
+      alt={name}
+      className={`opacity-70 hover:opacity-100 transition-opacity ${className}`}
+      onError={() => setFailed(true)}
+    />
+  )
+}
 
 const featuredProjects = [
   {
@@ -118,10 +140,10 @@ const ProjectsSection = () => {
                         key={tech.name}
                         className="relative group/tech"
                       >
-                        <img
-                          src={tech.logo}
-                          alt={tech.name}
-                          className="w-5 h-5 sm:w-6 sm:h-6 opacity-70 hover:opacity-100 transition-opacity"
+                        <TechIcon
+                          name={tech.name}
+                          logo={tech.logo}
+                          className="w-5 h-5 sm:w-6 sm:h-6"
                         />
                         <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-[10px] font-space-mono rounded opacity-0 group-hover/tech:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
                           {tech.name}

@@ -1,8 +1,30 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useInView } from "framer-motion"
+
+function TechIcon({ name, logo }: { name: string; logo: string }) {
+  const [failed, setFailed] = useState(false)
+  const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
+
+  if (failed) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded text-xs sm:text-sm font-bold text-gray-600 dark:text-gray-300 font-space-mono">
+        {initials}
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={logo}
+      alt={name}
+      className="w-full h-full object-contain"
+      onError={() => setFailed(true)}
+    />
+  )
+}
 
 const techStack = [
   // Row 1 - Languages & Core
@@ -76,11 +98,7 @@ export function TechStackSection() {
                 className="flex flex-col items-center gap-1 sm:gap-2 group"
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg bg-card border border-border flex items-center justify-center group-hover:border-muted-foreground/50 transition-all duration-300 group-hover:scale-110 p-2 sm:p-3">
-                  <img
-                    src={tech.logo}
-                    alt={tech.name}
-                    className="w-full h-full object-contain"
-                  />
+                  <TechIcon name={tech.name} logo={tech.logo} />
                 </div>
                 <span className="text-[10px] sm:text-xs text-muted-foreground font-space-mono text-center truncate w-full">
                   {tech.name}
