@@ -38,11 +38,11 @@ function HighlightedText({ text, keywords, className }: HighlightedTextProps) {
               animate={{
                 backgroundColor: isHighlighted
                   ? [
-                      "rgba(99, 102, 241, 0.2)",
-                      "rgba(99, 102, 241, 0.35)",
-                      "rgba(99, 102, 241, 0.2)",
+                      "rgba(30, 64, 175, 0.2)",
+                      "rgba(30, 64, 175, 0.35)",
+                      "rgba(30, 64, 175, 0.2)",
                     ]
-                  : "rgba(99, 102, 241, 0.1)",
+                  : "rgba(30, 64, 175, 0.1)",
                 scale: isHighlighted ? [1, 1.02, 1] : 1,
               }}
               transition={{
@@ -53,8 +53,8 @@ function HighlightedText({ text, keywords, className }: HighlightedTextProps) {
               }}
               className={`inline-block px-1 rounded transition-colors ${
                 isHighlighted
-                  ? "font-semibold text-indigo-700 dark:text-indigo-300"
-                  : "text-indigo-600 dark:text-indigo-400"
+                  ? "font-semibold text-blue-800 dark:text-blue-300"
+                  : "text-blue-700 dark:text-blue-400"
               }`}
             >
               {part}
@@ -85,7 +85,7 @@ export function AboutSection() {
             <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
           <motion.div
             initial={{ opacity: 0, x: -80, filter: "blur(10px)" }}
             animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -80, filter: "blur(10px)" }}
