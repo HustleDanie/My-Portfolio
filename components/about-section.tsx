@@ -119,7 +119,7 @@ export function AboutSection() {
           >
             <h3 className="font-orbitron text-xl sm:text-xl md:text-2xl font-bold mb-3 md:mb-4">AI Applications Engineer</h3>
             <HighlightedText
-              text="Hi, I'm Uche Maduabuchi Daniel, an AI Applications Engineer with a degree from the University of Ibadan. I specialize in building AI-powered mobile apps, web applications, and agentic AI systems that deliver real-world value."
+              text="Hi, I'm Uche Maduabuchi Daniel, an AI Applications Engineer with a Computer Science degree from the University of Ibadan. I specialize in building AI-powered mobile apps, web applications, and agentic AI systems that deliver real-world value."
               keywords={[
                 "AI Applications Engineer",
                 "AI-powered mobile apps",
