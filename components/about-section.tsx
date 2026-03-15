@@ -126,7 +126,7 @@ export function AboutSection() {
                 "agentic AI systems",
                 "real-world value",
               ]}
-              className="text-gray-700 dark:text-gray-300 mb-3 md:mb-6 font-space-mono text-sm sm:text-sm md:text-base text-justify leading-loose sm:leading-relaxed"
+              className="text-gray-700 dark:text-gray-300 mb-3 md:mb-6 font-space-mono text-sm sm:text-sm md:text-base text-left leading-loose sm:leading-relaxed"
             />
             <HighlightedText
               text="I'm passionate about turning AI capabilities into production-ready products that users love. Beyond building, I enjoy video games, exploring new ideas, and experimenting with emerging technologies. Always eager to push boundaries and ship something new."
@@ -136,7 +136,7 @@ export function AboutSection() {
                 "push boundaries",
                 "ship something new",
               ]}
-              className="text-gray-700 dark:text-gray-300 mb-4 md:mb-8 text-sm sm:text-sm md:text-base font-space-mono text-justify leading-loose sm:leading-relaxed"
+              className="text-gray-700 dark:text-gray-300 mb-4 md:mb-8 text-sm sm:text-sm md:text-base font-space-mono text-left leading-loose sm:leading-relaxed"
             />
           </motion.div>
         </div>
