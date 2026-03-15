@@ -92,7 +92,7 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-1 lg:order-1"
           >
-            <div className="relative max-w-[280px] sm:max-w-xs md:max-w-sm mx-auto lg:mx-0">
+            <div className="relative max-w-xs sm:max-w-sm md:max-w-md mx-auto lg:mx-0">
               <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-800 dark:to-black rounded-lg overflow-hidden">
                 <img
                   src="/images/uche-portrait.jpg"
@@ -106,8 +106,8 @@ export function AboutSection() {
               </div>
 
               {/* Decorative elements - smaller on mobile */}
-              <div className="absolute -top-1.5 -left-1.5 sm:-top-2 sm:-left-2 md:-top-4 md:-left-4 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 border-t-2 border-l-2 border-black dark:border-white"></div>
-              <div className="absolute -bottom-1.5 -right-1.5 sm:-bottom-2 sm:-right-2 md:-bottom-4 md:-right-4 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 border-b-2 border-r-2 border-black dark:border-white"></div>
+              <div className="absolute -top-1.5 -left-1.5 sm:-top-2 sm:-left-2 md:-top-4 md:-left-4 w-8 h-8 sm:w-12 sm:h-12 md:w-20 md:h-20 border-t-2 border-l-2 border-black dark:border-white"></div>
+              <div className="absolute -bottom-1.5 -right-1.5 sm:-bottom-2 sm:-right-2 md:-bottom-4 md:-right-4 w-8 h-8 sm:w-12 sm:h-12 md:w-20 md:h-20 border-b-2 border-r-2 border-black dark:border-white"></div>
             </div>
           </motion.div>
 
