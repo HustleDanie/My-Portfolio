@@ -90,7 +90,7 @@ export function AboutSection() {
             initial={{ opacity: 0, x: -80, filter: "blur(10px)" }}
             animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -80, filter: "blur(10px)" }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-            className="order-1 lg:order-1"
+            className="order-2 lg:order-1"
           >
             <div className="relative max-w-xs sm:max-w-sm md:max-w-md mx-auto lg:mx-0">
               <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-800 dark:to-black rounded-lg overflow-hidden">
@@ -115,7 +115,7 @@ export function AboutSection() {
             initial={{ opacity: 0, x: 80, filter: "blur(10px)" }}
             animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: 80, filter: "blur(10px)" }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="order-2 lg:order-2"
+            className="order-1 lg:order-2"
           >
             <h3 className="font-orbitron text-xl sm:text-xl md:text-2xl font-bold mb-3 md:mb-4">AI Applications Engineer</h3>
             <HighlightedText
