@@ -169,8 +169,7 @@ export function HeroSection() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-xl mb-6 md:mb-10 font-space-mono leading-relaxed px-2"
         >
-          Exploring the convergence of Large Language Models, Reinforcement Learning, and Cognitive Architectures to
-          build the next generation of AI systems.
+          I specialize in integrating AI into web and mobile experiences, and building autonomous agentic systems.
         </motion.p>
 
         <motion.div
