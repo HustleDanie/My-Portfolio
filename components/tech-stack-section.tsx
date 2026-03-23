@@ -27,45 +27,19 @@ function TechIcon({ name, logo }: { name: string; logo: string }) {
 }
 
 const techStack = [
-  // Row 1 - Languages & Core
   { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-  { name: "JavaScript", logo: "https://cdn.simpleicons.org/javascript/F7DF1E" },
-  { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
-  { name: "R", logo: "https://cdn.simpleicons.org/r/276DC3" },
-  { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus/00599C" },
-  { name: "Julia", logo: "https://cdn.simpleicons.org/julia/9558B2" },
-  { name: "Scala", logo: "https://cdn.simpleicons.org/scala/DC322F" },
-  { name: "Go", logo: "https://cdn.simpleicons.org/go/00ADD8" },
-
-  // Row 2 - ML/AI Frameworks
   { name: "TensorFlow", logo: "https://cdn.simpleicons.org/tensorflow/FF6F00" },
   { name: "PyTorch", logo: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
-  { name: "Keras", logo: "https://cdn.simpleicons.org/keras/D00000" },
-  { name: "scikit-learn", logo: "https://cdn.simpleicons.org/scikitlearn/F7931E" },
   { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
   { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
-  { name: "JAX", logo: "https://cdn.simpleicons.org/jax/A8B9CC" },
-  { name: "ONNX", logo: "https://cdn.simpleicons.org/onnx/005CED" },
-
-  // Row 3 - Data & Cloud
-  { name: "Pandas", logo: "https://cdn.simpleicons.org/pandas/150458" },
-  { name: "NumPy", logo: "https://cdn.simpleicons.org/numpy/013243" },
-  { name: "Apache Spark", logo: "https://cdn.simpleicons.org/apachespark/E25A1C" },
-  { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
-  { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/47A248" },
-  { name: "Redis", logo: "https://cdn.simpleicons.org/redis/DC382D" },
-  { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
-  { name: "Elasticsearch", logo: "https://cdn.simpleicons.org/elasticsearch/005571" },
-
-  // Row 4 - Tools & DevOps
-  { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-  { name: "Kubernetes", logo: "https://cdn.simpleicons.org/kubernetes/326CE5" },
-  { name: "Git", logo: "https://cdn.simpleicons.org/git/F05032" },
-  { name: "Jupyter", logo: "https://cdn.simpleicons.org/jupyter/F37626" },
+  { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
   { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
-  { name: "MLflow", logo: "https://cdn.simpleicons.org/mlflow/0194E2" },
-  { name: "OpenCV", logo: "https://cdn.simpleicons.org/opencv/5C3EE8" },
-  { name: "AWS", logo: "https://cdn.simpleicons.org/amazonwebservices/FF9900" },
+  { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
+  { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
+  { name: "Weaviate", logo: "https://cdn.simpleicons.org/weaviate/00D1A0" },
+  { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
+  { name: "Streamlit", logo: "https://cdn.simpleicons.org/streamlit/FF4B4B" },
+  { name: "Google Cloud", logo: "https://cdn.simpleicons.org/googlecloud/4285F4" },
 ]
 
 export function TechStackSection() {
