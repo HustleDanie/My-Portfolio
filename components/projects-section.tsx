@@ -210,41 +210,17 @@ const ProjectsSection = () => {
           <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
         </motion.div>
 
-        {/* Category Toggle - Mobile */}
+        {/* Category Toggle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex md:hidden justify-center mb-6"
+          className="flex justify-center mb-6 md:mb-12"
         >
-          <div className="flex items-center gap-2">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`relative px-4 py-2 rounded-full font-space-mono text-xs font-medium whitespace-nowrap transition-all duration-200 ${
-                  activeCategory === category.id
-                    ? "bg-black dark:bg-white text-white dark:text-black"
-                    : "bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-300 dark:border-gray-700"
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Category Toggle - Desktop */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="hidden md:flex justify-center mb-12"
-        >
-          <div className="relative inline-flex items-center bg-gray-200 dark:bg-gray-800 rounded-full p-1 border border-gray-300 dark:border-gray-700">
+          <div className="relative inline-flex items-center bg-gray-200 dark:bg-gray-800 rounded-full p-0.5 md:p-1 border border-gray-300 dark:border-gray-700">
             {/* Sliding indicator */}
             <motion.div
-              className="absolute top-1 bottom-1 rounded-full bg-gray-500 dark:bg-gray-600"
+              className="absolute top-0.5 md:top-1 bottom-0.5 md:bottom-1 rounded-full bg-gray-500 dark:bg-gray-600"
               layout
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
               style={{
@@ -256,7 +232,7 @@ const ProjectsSection = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`relative z-10 px-6 py-2.5 rounded-full font-space-mono text-sm font-medium transition-colors duration-200 min-w-[160px] ${
+                className={`relative z-10 px-3 md:px-6 py-1.5 md:py-2.5 rounded-full font-space-mono text-[10px] md:text-sm font-medium transition-colors duration-200 min-w-[100px] md:min-w-[160px] ${
                   activeCategory === category.id
                     ? "text-white"
                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
