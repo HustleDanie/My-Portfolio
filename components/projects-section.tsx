@@ -210,7 +210,31 @@ const ProjectsSection = () => {
           <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
         </motion.div>
 
-        {/* Category Toggle - Desktop Only */}
+        {/* Category Toggle - Mobile */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex md:hidden justify-center mb-6"
+        >
+          <div className="flex items-center gap-2">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`relative px-4 py-2 rounded-full font-space-mono text-xs font-medium whitespace-nowrap transition-all duration-200 ${
+                  activeCategory === category.id
+                    ? "bg-black dark:bg-white text-white dark:text-black"
+                    : "bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-300 dark:border-gray-700"
+                }`}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Category Toggle - Desktop */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
