@@ -38,9 +38,9 @@ type Project = {
 }
 
 const categories = [
-  { id: "agentic-ai", label: "Agentic AI" },
-  { id: "workflow-automation", label: "Workflow Automation" },
-  { id: "ai-ml", label: "AI / ML" },
+  { id: "agentic-ai", label: "Agentic AI", mobileLabel: "Agentic AI" },
+  { id: "workflow-automation", label: "Workflow Automation", mobileLabel: "Automation" },
+  { id: "ai-ml", label: "AI / ML", mobileLabel: "AI / ML" },
 ]
 
 const projectsByCategory: Record<string, Project[]> = {
@@ -238,7 +238,8 @@ const ProjectsSection = () => {
                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                 }`}
               >
-                {category.label}
+                <span className="hidden md:inline">{category.label}</span>
+                <span className="md:hidden">{category.mobileLabel}</span>
               </button>
             ))}
           </div>
