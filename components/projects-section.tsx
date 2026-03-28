@@ -348,7 +348,7 @@ const ProjectsSection = () => {
             size="lg"
             className="font-space-mono font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 px-6 sm:px-8 py-3 rounded-lg group text-sm sm:text-base h-12 sm:h-11"
           >
-            <Link href="/projects" className="flex items-center gap-2">
+            <Link href={`/projects?category=${activeCategory}`} className="flex items-center gap-2">
               Explore More Projects
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
