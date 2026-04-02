@@ -64,6 +64,21 @@ const projectsByCategory: Record<string, Project[]> = {
   ],
   "workflow-automation": [
     {
+      id: "linkedin-ai-job-alert",
+      title: "LinkedIn AI Job Alert Pipeline",
+      description: "Automated n8n workflow that scrapes LinkedIn for remote AI/ML internships across 6 countries, scores with GPT-4o-mini, and sends alerts to Telegram.",
+      image: "/images/linkedin-job-alert.png",
+      github: "https://github.com/HustleDanie/LinkedIn-AI-Job-Alert-Pipeline",
+      link: "/projects/linkedin-ai-job-alert",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
+        { name: "Telegram", logo: "https://cdn.simpleicons.org/telegram/26A5E4" },
+        { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
+      ],
+    },
+    {
       id: "smart-invoice-pipeline",
       title: "Smart Invoice Pipeline",
       description: "Automated invoice processing system that extracts, validates, and routes financial documents using OCR and rule-based workflows.",

@@ -63,6 +63,21 @@ const projectsByCategory: Record<string, Project[]> = {
   ],
   "workflow-automation": [
     {
+      id: "linkedin-ai-job-alert",
+      title: "LinkedIn AI Job Alert Pipeline",
+      description:
+        "Automated n8n workflow that scrapes LinkedIn for remote AI/ML internships across 6 countries, scores with GPT-4o-mini, and sends qualifying alerts to Telegram every 12 minutes.",
+      image: "/images/linkedin-job-alert.png",
+      github: "https://github.com/HustleDanie/LinkedIn-AI-Job-Alert-Pipeline",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
+        { name: "Telegram", logo: "https://cdn.simpleicons.org/telegram/26A5E4" },
+        { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
+      ],
+    },
+    {
       id: "smart-invoice-pipeline",
       title: "Smart Invoice Pipeline",
       description:
@@ -90,21 +105,6 @@ const projectsByCategory: Record<string, Project[]> = {
         { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions/2088FF" },
         { name: "Terraform", logo: "https://cdn.simpleicons.org/terraform/844FBA" },
         { name: "AWS", logo: "https://cdn.simpleicons.org/amazonwebservices/FF9900" },
-      ],
-    },
-    {
-      id: "data-sync-engine",
-      title: "Data Sync Engine",
-      description:
-        "Real-time data synchronization platform that keeps distributed databases in sync with conflict resolution, change detection, and automated schema migrations.",
-      image: "/images/placeholder-project.png",
-      github: "https://github.com/HustleDanie",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "Apache Kafka", logo: "https://cdn.simpleicons.org/apachekafka/231F20" },
-        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
-        { name: "Redis", logo: "https://cdn.simpleicons.org/redis/DC382D" },
-        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
       ],
     },
   ],
