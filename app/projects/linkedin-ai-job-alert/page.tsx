@@ -588,7 +588,7 @@ export default function LinkedInAIJobAlertPage() {
               </div>
               <div className="relative aspect-video bg-gray-100 dark:bg-gray-900">
                 <Image
-                  src="/images/linkedin-workflow.png"
+                  src="/images/linkedin-job-alert.png"
                   alt="n8n Workflow Screenshot"
                   fill
                   className="object-cover"
@@ -602,7 +602,7 @@ export default function LinkedInAIJobAlertPage() {
               </div>
               <div className="relative aspect-video bg-gray-100 dark:bg-gray-900">
                 <Image
-                  src="/images/linkedin-telegram-alert.png"
+                  src="/images/linkedin-telegram-alert.jpg"
                   alt="Telegram Alert Screenshot"
                   fill
                   className="object-cover"
