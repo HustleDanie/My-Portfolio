@@ -61,36 +61,6 @@ const projectsByCategory: Record<string, Project[]> = {
         { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
       ],
     },
-    {
-      id: "stockagentx",
-      title: "StockAgentX",
-      description: "Multi-agent financial intelligence platform leveraging RAG and deep learning for real-time stock market analysis with SEC filings integration.",
-      image: "/images/stock.png",
-      github: "https://github.com/HustleDanie/StockAgentX-Multi-Agent-Financial-Intelligence-Platform",
-      link: "/projects/stockagentx",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
-        { name: "PyTorch", logo: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
-        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
-        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-      ],
-    },
-    {
-      id: "autonomous-agent-systems",
-      title: "Autonomous Agent Systems",
-      description: "Interactive platform for building, configuring, and evaluating autonomous AI agents with multiple frameworks and reasoning strategies.",
-      image: "/images/placeholder-project.png",
-      github: "https://github.com/HustleDanie",
-      link: "/projects/autonomous-agent-systems",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
-        { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
-        { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs/000000" },
-        { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
-      ],
-    },
   ],
   "workflow-automation": [
     {
