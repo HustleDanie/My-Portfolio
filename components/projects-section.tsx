@@ -77,36 +77,6 @@ const projectsByCategory: Record<string, Project[]> = {
         { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
       ],
     },
-    {
-      id: "smart-invoice-pipeline",
-      title: "Smart Invoice Pipeline",
-      description:
-        "Automated invoice processing system that extracts, validates, and routes financial documents using OCR and rule-based workflows with real-time status tracking.",
-      image: "/images/placeholder-project.png",
-      github: "https://github.com/HustleDanie",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
-        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
-        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-        { name: "Redis", logo: "https://cdn.simpleicons.org/redis/DC382D" },
-      ],
-    },
-    {
-      id: "ci-cd-orchestrator",
-      title: "CI/CD Orchestrator",
-      description:
-        "Intelligent deployment pipeline manager that automates build, test, and release workflows across multiple environments with rollback capabilities.",
-      image: "/images/placeholder-project.png",
-      github: "https://github.com/HustleDanie",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-        { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions/2088FF" },
-        { name: "Terraform", logo: "https://cdn.simpleicons.org/terraform/844FBA" },
-        { name: "AWS", logo: "https://cdn.simpleicons.org/amazonwebservices/FF9900" },
-      ],
-    },
   ],
   "ai-ml": [
     {
