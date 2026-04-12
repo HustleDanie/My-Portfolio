@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, AnimatePresence } from "framer-motion"
 import { ArrowRight, Github, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -37,54 +37,113 @@ type Project = {
   techStack: { name: string; logo: string }[]
 }
 
-const featuredProjects: Project[] = [
-  {
-    id: "lead-capture-crm-pipeline",
-    title: "Lead Capture → CRM Pipeline",
-    description:
-      "Robust, scalable lead generation engine that automates processing of high-intent prospects through multi-step enrichment via Clearbit/Apollo, CRM storage in HubSpot/Salesforce, and real-time Slack team notifications.",
-    image: "/images/placeholder.png",
-    github: "#",
-    techStack: [
-      { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-      { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
-      { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
-      { name: "Webhook", logo: "https://cdn.simpleicons.org/webhook/C73D1A" },
-    ],
-  },
-  {
-    id: "rag-customer-support",
-    title: "RAG Customer Support Chatbot",
-    description:
-      "Production-grade AI chatbot answering customer questions from internal knowledge bases using vector search with Supabase/Pinecone, OpenAI embeddings, and hallucination guardrails — automating 70% of support tickets.",
-    image: "/images/placeholder.png",
-    github: "#",
-    techStack: [
-      { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-      { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-      { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3FCF8E" },
-      { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
-    ],
-  },
-  {
-    id: "ai-lead-enrichment-outreach",
-    title: "AI Lead Enrichment & Outreach",
-    description:
-      "Deep personalization outreach system using Apollo and Apify for real-time prospect research, Perplexity for company analysis, and GPT-4o for generating hyper-personalized cold emails with automated A/B testing.",
-    image: "/images/placeholder.png",
-    github: "#",
-    techStack: [
-      { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-      { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-      { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
-      { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
-    ],
-  },
+const categories = [
+  { id: "cinematic-ai", label: "Cinematic AI", mobileLabel: "Cinematic AI" },
+  { id: "workflow-automation", label: "Workflow Automation", mobileLabel: "Automation" },
+  { id: "ai-ml", label: "AI / ML", mobileLabel: "AI / ML" },
 ]
+
+const projectsByCategory: Record<string, Project[]> = {
+  "cinematic-ai": [],
+  "workflow-automation": [
+    {
+      id: "lead-capture-crm-pipeline",
+      title: "Lead Capture → CRM Pipeline",
+      description:
+        "Robust, scalable lead generation engine that automates processing of high-intent prospects through multi-step enrichment via Clearbit/Apollo, CRM storage in HubSpot/Salesforce, and real-time Slack team notifications.",
+      image: "/images/placeholder.png",
+      github: "#",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+        { name: "Webhook", logo: "https://cdn.simpleicons.org/webhook/C73D1A" },
+      ],
+    },
+    {
+      id: "rag-customer-support",
+      title: "RAG Customer Support Chatbot",
+      description:
+        "Production-grade AI chatbot answering customer questions from internal knowledge bases using vector search with Supabase/Pinecone, OpenAI embeddings, and hallucination guardrails — automating 70% of support tickets.",
+      image: "/images/placeholder.png",
+      github: "#",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3FCF8E" },
+        { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
+      ],
+    },
+    {
+      id: "ai-lead-enrichment-outreach",
+      title: "AI Lead Enrichment & Outreach",
+      description:
+        "Deep personalization outreach system using Apollo and Apify for real-time prospect research, Perplexity for company analysis, and GPT-4o for generating hyper-personalized cold emails with automated A/B testing.",
+      image: "/images/placeholder.png",
+      github: "#",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
+        { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
+      ],
+    },
+  ],
+  "ai-ml": [
+    {
+      id: "omnisearch",
+      title: "OmniSearch",
+      description:
+        "Multimodal product discovery engine using CLIP embeddings and vector search. Find products using text, images, or both with intelligent two-stage ranking for cross-modal e-commerce search.",
+      image: "/images/omnisearch.png",
+      github: "https://github.com/HustleDanie/OmniSearch-A-Multimodal-Retrieval-and-Ranking-System-for-Cross-Modal-E-Commerce-Product-Discovery",
+      techStack: [
+        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+        { name: "PyTorch", logo: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
+        { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+        { name: "Weaviate", logo: "https://cdn.simpleicons.org/weaviate/00D1A0" },
+        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+      ],
+    },
+    {
+      id: "medsecure",
+      title: "MedSecure",
+      description:
+        "HIPAA-compliant medical document summarization platform with automatic PII masking, medical entity extraction, AI-powered summarization using Llama-3, and hallucination verification for secure patient data processing.",
+      image: "/images/medsecure.png",
+      github: "https://github.com/HustleDanie/MedSecure---HIPAA-Compliant-Medical-Summary-Platform-",
+      techStack: [
+        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+        { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
+        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
+      ],
+    },
+    {
+      id: "knowledge-retrieval",
+      title: "Enterprise Knowledge Retrieval",
+      description:
+        "Production-ready GenAI/MLOps platform for enterprise document search, synthesis, and RAG pipelines with hybrid search across multiple document types.",
+      image: "/images/retrieval.png",
+      github: "https://github.com/HustleDanie/Enterprise-Knowledge-Retrieval-Synthesis-Platform",
+      techStack: [
+        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
+        { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
+        { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
+        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
+      ],
+    },
+  ],
+}
 
 const ProjectsSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [activeCategory, setActiveCategory] = useState("cinematic-ai")
+
+  const currentProjects = projectsByCategory[activeCategory] || []
 
   return (
     <section id="projects" ref={ref} className="min-h-screen flex items-center justify-center py-12 md:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
@@ -102,14 +161,51 @@ const ProjectsSection = () => {
           <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-6"></div>
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Category Toggle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 md:mb-16"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex justify-center mb-6 md:mb-12"
         >
-          {featuredProjects.map((project, index) => (
+          <div className="relative inline-flex items-center bg-gray-200 dark:bg-gray-800 rounded-full p-0.5 md:p-1 border border-gray-300 dark:border-gray-700">
+            <motion.div
+              className="absolute top-0.5 md:top-1 bottom-0.5 md:bottom-1 rounded-full bg-gray-500 dark:bg-gray-600"
+              layout
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              style={{
+                width: `calc(${100 / categories.length}% - 4px)`,
+                left: `calc(${(categories.findIndex(c => c.id === activeCategory) * 100) / categories.length}% + 2px)`,
+              }}
+            />
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`relative z-10 px-3 md:px-6 py-1.5 md:py-2.5 rounded-full font-space-mono text-[10px] md:text-sm font-medium transition-colors duration-200 min-w-[100px] md:min-w-[160px] ${
+                  activeCategory === category.id
+                    ? "text-white"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                }`}
+              >
+                <span className="hidden md:inline">{category.label}</span>
+                <span className="md:hidden">{category.mobileLabel}</span>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 md:mb-16"
+          >
+            {currentProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -186,8 +282,9 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
         {/* Explore More Button */}
         <motion.div
@@ -201,7 +298,7 @@ const ProjectsSection = () => {
             size="lg"
             className="font-space-mono font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 px-6 sm:px-8 py-3 rounded-lg group text-sm sm:text-base h-12 sm:h-11"
           >
-            <Link href="/projects" className="flex items-center gap-2">
+            <Link href={`/projects?category=${activeCategory}`} className="flex items-center gap-2">
               Explore More Projects
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
