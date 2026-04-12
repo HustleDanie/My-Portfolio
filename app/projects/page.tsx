@@ -29,7 +29,7 @@ function TechIcon({ name, logo, className }: { name: string; logo: string; class
 }
 
 const categories = [
-  { id: "agentic-ai", label: "Agentic AI", mobileLabel: "Agentic AI" },
+  { id: "cinematic-ai", label: "Cinematic AI", mobileLabel: "Cinematic AI" },
   { id: "workflow-automation", label: "Workflow Automation", mobileLabel: "Automation" },
   { id: "ai-ml", label: "AI / ML", mobileLabel: "AI / ML" },
 ]
@@ -45,23 +45,7 @@ type Project = {
 }
 
 const projectsByCategory: Record<string, Project[]> = {
-  "agentic-ai": [
-    {
-      id: "devassist",
-      title: "DevAssist",
-      description: "Enterprise-grade automated code migration using LangGraph workflow. Supports Python 2→3 and Flask→FastAPI migrations.",
-      image: "/images/devassist.png",
-      github: "https://github.com/HustleDanie/DevAssist",
-      link: "/projects/devassist",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
-        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
-        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-      ],
-    },
-  ],
+  "cinematic-ai": [],
   "workflow-automation": [
     {
       id: "linkedin-ai-job-alert",
@@ -78,23 +62,290 @@ const projectsByCategory: Record<string, Project[]> = {
         { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
       ],
     },
-  ],
-  "ai-ml": [
+    // Deterministic Automation
     {
-      id: "oncology-irae-detection",
-      title: "Oncology irAE Assistant",
-      description: "AI-powered clinical decision support for detecting and triaging immune-related adverse events in oncology immunotherapy patients.",
-      image: "/images/oncology.png",
-      github: "https://github.com/HustleDanie/Oncology-irAE-Detection",
-      link: "/projects/oncology-irae-detection",
+      id: "lead-capture-crm-pipeline",
+      title: "Lead Capture → CRM Pipeline",
+      description: "Robust lead generation engine automating high-intent prospect processing through multi-step enrichment via Clearbit/Apollo, CRM storage in HubSpot/Salesforce, and real-time Slack notifications.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/lead-capture-crm-pipeline",
       techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "TensorFlow", logo: "https://cdn.simpleicons.org/tensorflow/FF6F00" },
-        { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
-        { name: "Streamlit", logo: "https://cdn.simpleicons.org/streamlit/FF4B4B" },
-        { name: "Google Cloud", logo: "https://cdn.simpleicons.org/googlecloud/4285F4" },
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+        { name: "Webhook", logo: "https://cdn.simpleicons.org/webhook/C73D1A" },
       ],
     },
+    {
+      id: "multi-system-data-sync",
+      title: "Multi-System Data Sync",
+      description: "Bidirectional synchronization between CRMs, spreadsheets, email platforms, and project tools — Salesforce ↔ Google Sheets, HubSpot ↔ Airtable with conflict resolution.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/multi-system-data-sync",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
+        { name: "Airtable", logo: "https://cdn.simpleicons.org/airtable/18BFFF" },
+        { name: "Salesforce", logo: "https://cdn.simpleicons.org/salesforce/00A1E0" },
+      ],
+    },
+    {
+      id: "email-parsing-routing",
+      title: "Email Parsing & Auto-Routing",
+      description: "Incoming email classification, action item extraction, team routing, CRM logging, and auto-acknowledgement system built on Gmail + n8n webhook triggers.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/email-parsing-routing",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
+        { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+      ],
+    },
+    {
+      id: "sales-pipeline-automation",
+      title: "Sales Pipeline & Lead Scoring",
+      description: "Account scoring based on defined matrices, automated follow-up sequences triggered by pipeline stage changes, and reporting dashboards for sales teams.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/sales-pipeline-automation",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
+        { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+      ],
+    },
+    {
+      id: "webhook-api-integration",
+      title: "Webhook API Integration",
+      description: "Connecting non-native SaaS tools via webhook-based pipelines — CloudTalk → GoHighLevel, Typeform → Airtable → Slack, Cal.com → CRM with conversion tracking.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/webhook-api-integration",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "Webhook", logo: "https://cdn.simpleicons.org/webhook/C73D1A" },
+        { name: "Airtable", logo: "https://cdn.simpleicons.org/airtable/18BFFF" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+      ],
+    },
+    {
+      id: "reporting-analytics-aggregation",
+      title: "Reporting & Analytics Aggregation",
+      description: "Pulling metrics from Facebook Ads, Google Analytics, Instagram, LinkedIn, and TikTok into a single formatted Slack/email dashboard report on schedule.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/reporting-analytics-aggregation",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "Google Analytics", logo: "https://cdn.simpleicons.org/googleanalytics/E37400" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+        { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
+      ],
+    },
+    {
+      id: "ecommerce-order-management",
+      title: "E-Commerce Order Management",
+      description: "Shopify/WooCommerce order notifications, inventory threshold alerts, Stripe → QuickBooks receipt automation, and shipping status updates via email or WhatsApp.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/ecommerce-order-management",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "Shopify", logo: "https://cdn.simpleicons.org/shopify/7AB55C" },
+        { name: "Stripe", logo: "https://cdn.simpleicons.org/stripe/635BFF" },
+        { name: "WhatsApp", logo: "https://cdn.simpleicons.org/whatsapp/25D366" },
+      ],
+    },
+    {
+      id: "employee-onboarding-automation",
+      title: "Employee Onboarding Automation",
+      description: "Account provisioning across Google Workspace, Slack, Notion, and GitHub with document distribution, training material delivery, and IT asset tracking.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/employee-onboarding-automation",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "Google", logo: "https://cdn.simpleicons.org/google/4285F4" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+        { name: "Notion", logo: "https://cdn.simpleicons.org/notion/000000" },
+      ],
+    },
+    {
+      id: "social-media-crossposting",
+      title: "Social Media Cross-Posting",
+      description: "Content created once, then reformatted and posted across LinkedIn, Twitter/X, Instagram, Facebook, and Telegram on a schedule with platform-specific formatting.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/social-media-crossposting",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "LinkedIn", logo: "https://cdn.simpleicons.org/linkedin/0A66C2" },
+        { name: "Telegram", logo: "https://cdn.simpleicons.org/telegram/26A5E4" },
+        { name: "Instagram", logo: "https://cdn.simpleicons.org/instagram/E4405F" },
+      ],
+    },
+    {
+      id: "n8n-migration-setup",
+      title: "n8n Migration & Setup",
+      description: "Self-hosted n8n setup on VPS with Docker, plus full workflow migration from Zapier/Make — including workflow translation, testing, and production deployment.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/n8n-migration-setup",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
+        { name: "DigitalOcean", logo: "https://cdn.simpleicons.org/digitalocean/0080FF" },
+        { name: "Nginx", logo: "https://cdn.simpleicons.org/nginx/009639" },
+      ],
+    },
+    // AI-Powered Automation
+    {
+      id: "rag-customer-support",
+      title: "RAG Customer Support Chatbot",
+      description: "Production AI chatbot answering from internal knowledge bases using Supabase/Pinecone vector search, OpenAI embeddings, and hallucination guardrails — automating 70% of tickets.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/rag-customer-support",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3FCF8E" },
+        { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
+      ],
+    },
+    {
+      id: "ai-lead-enrichment-outreach",
+      title: "AI Lead Enrichment & Outreach",
+      description: "Deep personalization outreach using Apollo and Apify for prospect research, Perplexity for company analysis, and GPT-4o for hyper-personalized cold emails with A/B testing.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/ai-lead-enrichment-outreach",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
+        { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
+      ],
+    },
+    {
+      id: "multi-agent-orchestration",
+      title: "Multi-Agent Orchestration",
+      description: "CEO orchestrator agent delegating to specialized sub-agents — marketing, operations, finance — to generate comprehensive sales plans and market analyses.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/multi-agent-orchestration",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
+        { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3FCF8E" },
+      ],
+    },
+    {
+      id: "ai-email-triage",
+      title: "AI Email Triage & Inbox Management",
+      description: "LLM-powered email classification by intent and urgency, action item extraction, response drafting for human review, and intelligent team routing with human-in-the-loop.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/ai-email-triage",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+      ],
+    },
+    {
+      id: "ai-voice-agent",
+      title: "AI Voice Agent for Booking & Sales",
+      description: "AI agent handling inbound calls via Vapi, qualifying leads through natural conversation, booking appointments on Calendly, and updating CRMs automatically.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/ai-voice-agent",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Twilio", logo: "https://cdn.simpleicons.org/twilio/F22F46" },
+        { name: "Google Calendar", logo: "https://cdn.simpleicons.org/googlecalendar/4285F4" },
+      ],
+    },
+    {
+      id: "ai-content-pipeline",
+      title: "AI Content Generation Pipeline",
+      description: "End-to-end system: topic research via Perplexity → outline with Claude → content with GPT-4 → images with DALL-E → SEO optimization → WordPress publishing → social distribution.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/ai-content-pipeline",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "WordPress", logo: "https://cdn.simpleicons.org/wordpress/21759B" },
+        { name: "Anthropic", logo: "https://cdn.simpleicons.org/anthropic/191919" },
+      ],
+    },
+    {
+      id: "document-analysis-extraction",
+      title: "Document Analysis & Extraction",
+      description: "Processing invoices, contracts, and reports using OCR + AI — structured data extraction, AI summarization, and database entry. Reduces proposal generation from weeks to minutes.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/document-analysis-extraction",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
+        { name: "Airtable", logo: "https://cdn.simpleicons.org/airtable/18BFFF" },
+      ],
+    },
+    {
+      id: "ai-competitor-monitoring",
+      title: "AI Competitor Monitoring",
+      description: "Automated scraping of competitor websites, social media, and ad libraries with AI analysis of positioning, pricing changes, and feature launches — alerts via Slack or Telegram.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/ai-competitor-monitoring",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
+        { name: "Telegram", logo: "https://cdn.simpleicons.org/telegram/26A5E4" },
+      ],
+    },
+    {
+      id: "secops-automation",
+      title: "Intelligent SecOps Automation",
+      description: "Alert enrichment, automated threat triage, and incident response orchestration for security operations — SOAR-style automation saving millions in manual analysis.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/secops-automation",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
+      ],
+    },
+    {
+      id: "deep-research-agent",
+      title: "Deep Research Agent",
+      description: "Multi-step AI agent mining data from multiple sources, cross-referencing findings, and producing structured research reports for competitive analysis, market research, and due diligence.",
+      image: "/images/placeholder.png",
+      github: "#",
+      link: "/projects/deep-research-agent",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
+        { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
+      ],
+    },
+  ],
+  "ai-ml": [
     {
       id: "omnisearch",
       title: "OmniSearch",
@@ -429,7 +680,7 @@ function ProjectsPageContent() {
   const searchParams = useSearchParams()
   const categoryParam = searchParams.get("category")
   const validCategories = categories.map(c => c.id)
-  const initialCategory = categoryParam && validCategories.includes(categoryParam) ? categoryParam : "agentic-ai"
+  const initialCategory = categoryParam && validCategories.includes(categoryParam) ? categoryParam : "cinematic-ai"
   const [activeCategory, setActiveCategory] = useState(initialCategory)
 
   const currentProjects = projectsByCategory[activeCategory] || []
