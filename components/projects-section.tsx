@@ -88,6 +88,20 @@ const projectsByCategory: Record<string, Project[]> = {
         { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
       ],
     },
+    {
+      id: "email-triage-automation",
+      title: "Email Triage Automation",
+      description:
+        "Production-grade n8n workflow that turns a shared inbox into a classified, routed ticketing pipeline — GPT-4o-mini classification, confidence-threshold human review, RFC-3834 loop prevention, and thread-aware auto-replies into Gmail, HubSpot, Zendesk, and Slack.",
+      image: "/images/emailparsing.png",
+      github: "https://github.com/HustleDanie/Email-Triage-Automation",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
+        { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
+        { name: "Zendesk", logo: "https://cdn.simpleicons.org/zendesk/03363D" },
+      ],
+    },
   ],
   "ai-ml": [
     {
