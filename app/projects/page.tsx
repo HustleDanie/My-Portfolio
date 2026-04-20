@@ -64,17 +64,17 @@ const projectsByCategory: Record<string, Project[]> = {
     },
     // Deterministic Automation
     {
-      id: "lead-capture-crm-pipeline",
+      id: "lead-generation-engine",
       title: "Lead Capture → CRM Pipeline",
       description: "Robust lead generation engine automating high-intent prospect processing through multi-step enrichment via Clearbit/Apollo, CRM storage in HubSpot/Salesforce, and real-time Slack notifications.",
-      image: "/images/placeholder.png",
-      github: "#",
-      link: "/projects/lead-capture-crm-pipeline",
+      image: "/images/leadgeneration.png",
+      github: "https://github.com/HustleDanie/lead-generation-engine",
+      link: "/projects/lead-generation-engine",
       techStack: [
         { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
         { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
         { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
-        { name: "Webhook", logo: "https://cdn.simpleicons.org/webhook/C73D1A" },
+        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
       ],
     },
     {
