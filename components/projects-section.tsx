@@ -47,6 +47,20 @@ const projectsByCategory: Record<string, Project[]> = {
   "cinematic-ai": [],
   "workflow-automation": [
     {
+      id: "n8n-claude-kit",
+      title: "n8n Claude Kit",
+      description:
+        "Zero-to-workflow n8n scaffolding for Claude Code. Bundles 7 n8n skills, 3 subagents, and a /n8n-init slash command that bootstraps a ready-to-build n8n project in under 90 seconds.",
+      image: "/images/n8nclaudekit.png",
+      github: "https://github.com/HustleDanie/n8n-claude-kit",
+      techStack: [
+        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
+        { name: "Claude", logo: "https://cdn.simpleicons.org/anthropic/191919" },
+        { name: "MCP", logo: "https://cdn.simpleicons.org/modelcontextprotocol/000000" },
+        { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
+      ],
+    },
+    {
       id: "lead-generation-engine",
       title: "Lead Capture → CRM Pipeline",
       description:
@@ -58,34 +72,6 @@ const projectsByCategory: Record<string, Project[]> = {
         { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
         { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
         { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-      ],
-    },
-    {
-      id: "rag-customer-support",
-      title: "RAG Customer Support Chatbot",
-      description:
-        "Production-grade AI chatbot answering customer questions from internal knowledge bases using vector search with Supabase/Pinecone, OpenAI embeddings, and hallucination guardrails — automating 70% of support tickets.",
-      image: "/images/placeholder.png",
-      github: "#",
-      techStack: [
-        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-        { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3FCF8E" },
-        { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
-      ],
-    },
-    {
-      id: "ai-lead-enrichment-outreach",
-      title: "AI Lead Enrichment & Outreach",
-      description:
-        "Deep personalization outreach system using Apollo and Apify for real-time prospect research, Perplexity for company analysis, and GPT-4o for generating hyper-personalized cold emails with automated A/B testing.",
-      image: "/images/placeholder.png",
-      github: "#",
-      techStack: [
-        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-        { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
-        { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
       ],
     },
     {
