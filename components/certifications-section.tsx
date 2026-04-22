@@ -46,6 +46,44 @@ const certifications = [
       "Mastered optimization algorithms and hyperparameter tuning",
     ],
   },
+  {
+    title: "Deep Learning A-Z 2025: Neural Networks, AI & ChatGPT Prize",
+    issuer: "Udemy • Kirill Eremenko & Hadelin de Ponteves",
+    date: "2025",
+    status: "Completed",
+    credentialId: "UC-88c204d5-a614-4fc4-8777-ede7f5bd343d",
+    skills: ["ANN", "CNN", "RNN", "LSTM", "Self-Organizing Maps", "AutoEncoders", "TensorFlow", "PyTorch"],
+    image: "/images/udemy-deep-learning-az-cert.png",
+    link: "https://ude.my/UC-88c204d5-a614-4fc4-8777-ede7f5bd343d",
+    description:
+      "Hands-on 22.5-hour course covering supervised and unsupervised deep learning techniques across vision, sequence, and generative tasks, updated with modern transformer and ChatGPT-era workflows.",
+    achievements: [
+      "Built Artificial Neural Networks for tabular classification problems",
+      "Implemented Convolutional Neural Networks for image recognition",
+      "Developed Recurrent Neural Networks and LSTMs for time-series forecasting",
+      "Applied Self-Organizing Maps and Boltzmann Machines for unsupervised learning",
+      "Constructed AutoEncoders for dimensionality reduction and recommender systems",
+    ],
+  },
+  {
+    title: "LangChain - Develop LLM Powered Applications with LangChain",
+    issuer: "Udemy • Eden Marco",
+    date: "2025",
+    status: "Completed",
+    credentialId: "UC-d6d0d5e7-aae7-489b-97fc-99f7f5c38fa6",
+    skills: ["LangChain", "LLMs", "RAG", "Vector Stores", "Agents", "Prompt Engineering", "OpenAI", "Python"],
+    image: "/images/udemy-langchain-cert.png",
+    link: "https://ude.my/UC-d6d0d5e7-aae7-489b-97fc-99f7f5c38fa6",
+    description:
+      "Practical 9.5-hour course on building production-ready LLM applications with LangChain, covering chains, agents, memory, and Retrieval-Augmented Generation pipelines.",
+    achievements: [
+      "Built end-to-end LLM applications using the LangChain framework",
+      "Implemented Retrieval-Augmented Generation pipelines with vector databases",
+      "Designed multi-step chains and tool-using agents for complex tasks",
+      "Integrated OpenAI models with custom prompt templates and output parsers",
+      "Applied memory and conversational state to multi-turn LLM workflows",
+    ],
+  },
 ]
 
 type Certification = typeof certifications[0]
