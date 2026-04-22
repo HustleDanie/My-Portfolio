@@ -35,7 +35,7 @@ const certifications = [
     credentialId: "DL2024-UC-789",
     skills: ["Neural Networks", "Deep Learning", "TensorFlow", "Computer Vision", "NLP", "CNN", "RNN"],
     image: "/images/coursera-deep-learning-cert.png",
-    link: "https://coursera.org/verify/specialization/CHYQJRP1O5AD",
+    link: "https://www.coursera.org/verify/specialization/CHYQIRP105AD",
     description:
       "Comprehensive specialization covering neural networks, deep learning, and practical applications in computer vision and natural language processing.",
     achievements: [
