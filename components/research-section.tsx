@@ -7,24 +7,34 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
+import Image from "next/image"
 
 const blogPosts = [
   {
     id: "1",
-    title: "Oncology irAE Assistant",
-    subtitle: "AI-powered clinical decision support for detecting and triaging immune-related adverse events in oncology immunotherapy patients.",
-    link: "/projects/oncology-irae-detection",
+    title: "Enterprise Knowledge Retrieval",
+    subtitle: "Production-grade GenAI/MLOps platform for enterprise document search with hybrid retrieval, RAG pipelines, and citations.",
+    image: "/images/retrieval.png",
+    category: "RAG · MLOps",
+    readTime: "8 min read",
+    link: "/projects/knowledge-retrieval",
   },
   {
     id: "2",
     title: "MedSecure: HIPAA-Compliant Summarization",
     subtitle: "Secure medical document processing with automatic PII masking, entity extraction, and hallucination verification.",
+    image: "/images/medsecure.png",
+    category: "Healthcare AI",
+    readTime: "6 min read",
     link: "/projects/medsecure",
   },
   {
     id: "3",
     title: "OmniSearch: Multimodal Discovery",
     subtitle: "Multimodal product discovery engine using CLIP embeddings and vector search for cross-modal e-commerce.",
+    image: "/images/omnisearch.png",
+    category: "Multimodal AI",
+    readTime: "7 min read",
     link: "/projects/omnisearch",
   },
 ]
@@ -49,26 +59,45 @@ export function ResearchSection() {
             <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto"></div>
           </motion.div>
 
-          {/* 3-Column Card Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 md:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-8 md:mb-12">
             {blogPosts.map((blog, index) => (
               <motion.div
                 key={blog.id}
-                initial={{ opacity: 0, x: -60, filter: "blur(10px)" }}
-                animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -60, filter: "blur(10px)" }}
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 30, filter: "blur(10px)" }}
                 transition={{ duration: 0.5, delay: 0.15 + index * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                <Link href={blog.link}>
-                  <Card className="bg-card border border-border hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-lg overflow-hidden group h-full p-4 sm:p-5 md:p-6 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.08)]">
-                    <h3 className="font-orbitron text-base sm:text-lg font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
-                      {blog.title}
-                    </h3>
-                    <p className="text-muted-foreground text-xs sm:text-sm line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
-                      {blog.subtitle}
-                    </p>
-                    <div className="flex items-center text-xs sm:text-sm font-space-mono text-muted-foreground group-hover:text-foreground transition-colors">
-                      <span>Read More</span>
-                      <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
+                <Link href={blog.link} className="block h-full">
+                  <Card className="bg-card border border-border hover:border-foreground/30 transition-all duration-300 hover:shadow-xl dark:hover:shadow-white/5 overflow-hidden group h-full rounded-xl flex flex-col p-0 gap-0">
+                    <div className="relative h-44 sm:h-48 overflow-hidden bg-gray-100 dark:bg-gray-900">
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                      <div className="absolute top-3 left-3">
+                        <span className="inline-block px-2.5 py-1 bg-white/90 dark:bg-black/80 backdrop-blur-sm rounded-full text-[10px] font-space-mono uppercase tracking-wider text-black dark:text-white">
+                          {blog.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-4 sm:p-5 flex flex-col flex-1">
+                      <h3 className="font-orbitron text-base sm:text-lg font-semibold text-foreground mb-2 leading-snug group-hover:text-foreground/80 transition-colors line-clamp-2">
+                        {blog.title}
+                      </h3>
+                      <p className="font-space-mono text-xs sm:text-sm text-muted-foreground line-clamp-3 mb-4 flex-1">
+                        {blog.subtitle}
+                      </p>
+                      <div className="flex items-center justify-between pt-3 border-t border-border/60 text-[11px] sm:text-xs font-space-mono">
+                        <span className="text-muted-foreground">{blog.readTime}</span>
+                        <span className="flex items-center gap-1 text-foreground/80 group-hover:text-foreground transition-colors">
+                          Read article
+                          <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </div>
                     </div>
                   </Card>
                 </Link>
@@ -76,7 +105,6 @@ export function ResearchSection() {
             ))}
           </div>
 
-          {/* Explore More Blogs Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
