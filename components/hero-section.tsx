@@ -169,7 +169,7 @@ export function HeroSection() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 text-base sm:text-base md:text-xl mb-6 md:mb-10 font-space-mono leading-relaxed px-2"
         >
-          I specialize in integrating AI into web and mobile experiences, and building autonomous agentic systems.
+          I build production-grade AI/ML systems — RAG pipelines, multimodal retrieval, and LLM-powered agents — alongside n8n workflow automation that turns models into reliable, real-world software.
         </motion.p>
 
         <motion.div
