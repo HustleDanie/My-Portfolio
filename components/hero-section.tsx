@@ -9,12 +9,12 @@ import Link from "next/link"
 export function HeroSection() {
   const [fabOpen, setFabOpen] = useState(false)
   const words = [
-    { text: "Advancing" },
-    { text: "the" },
-    { text: "Frontiers" },
-    { text: "of" },
-    { text: "Artificial", className: "text-black dark:text-white" },
-    { text: "Intelligence", className: "text-black dark:text-white" },
+    { text: "Building" },
+    { text: "AI" },
+    { text: "Agents" },
+    { text: "and" },
+    { text: "Automation", className: "text-black dark:text-white" },
+    { text: "Pipelines", className: "text-black dark:text-white" },
   ]
 
   return (
