@@ -3,7 +3,7 @@
 import { Suspense, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Github, ExternalLink } from "lucide-react"
+import { Github, ExternalLink, Workflow, Cpu } from "lucide-react"
 import Link from "next/link"
 
 function TechIcon({ name, logo, className }: { name: string; logo: string; className?: string }) {
@@ -29,8 +29,8 @@ function TechIcon({ name, logo, className }: { name: string; logo: string; class
 }
 
 const categories = [
-  { id: "workflow-automation", label: "Workflow Automation", mobileLabel: "Automation" },
-  { id: "ai-ml", label: "AI / ML", mobileLabel: "AI / ML" },
+  { id: "workflow-automation", label: "Workflow Automation", mobileLabel: "Automation", icon: Workflow },
+  { id: "ai-ml", label: "AI / ML", mobileLabel: "AI / ML", icon: Cpu },
 ]
 
 type Project = {
@@ -186,10 +186,10 @@ function ProjectsPageContent() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex justify-center mb-6 md:mb-12"
           >
-            <div className="relative inline-flex items-center bg-gray-200 dark:bg-gray-800 rounded-full p-0.5 md:p-1 border border-gray-300 dark:border-gray-700">
+            <div className="relative inline-flex items-center bg-gray-200 dark:bg-gray-800 md:bg-gray-100 md:dark:bg-gray-900 rounded-full p-0.5 md:p-1 border border-gray-300 dark:border-gray-700 md:border-0 md:ring-1 md:ring-black/5 md:dark:ring-white/10">
               {/* Sliding indicator */}
               <motion.div
-                className="absolute top-0.5 md:top-1 bottom-0.5 md:bottom-1 rounded-full bg-gray-500 dark:bg-gray-600"
+                className="absolute top-0.5 md:top-1 bottom-0.5 md:bottom-1 rounded-full bg-gray-500 dark:bg-gray-600 md:bg-white md:dark:bg-gray-800 md:shadow-sm md:ring-1 md:ring-black/5"
                 layout
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 style={{
@@ -197,20 +197,28 @@ function ProjectsPageContent() {
                   left: `calc(${(categories.findIndex(c => c.id === activeCategory) * 100) / categories.length}% + 2px)`,
                 }}
               />
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`relative z-10 px-3 md:px-6 py-1.5 md:py-2.5 rounded-full font-space-mono text-[10px] md:text-sm font-medium transition-colors duration-200 min-w-[100px] md:min-w-[160px] ${
-                    activeCategory === category.id
-                      ? "text-white"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-                  }`}
-                >
-                  <span className="hidden md:inline">{category.label}</span>
-                  <span className="md:hidden">{category.mobileLabel}</span>
-                </button>
-              ))}
+              {categories.map((category) => {
+                const count = projectsByCategory[category.id]?.length ?? 0
+                const Icon = category.icon
+                return (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`relative z-10 px-3 md:px-5 py-1.5 rounded-full font-space-mono text-[10px] md:text-sm font-medium transition-colors duration-200 min-w-[100px] md:min-w-[150px] md:tracking-tight ${
+                      activeCategory === category.id
+                        ? "text-white md:text-black md:dark:text-white"
+                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                    }`}
+                  >
+                    <span className="hidden md:inline-flex items-center justify-center gap-1.5">
+                      <Icon className="h-3.5 w-3.5" />
+                      <span>{category.label}</span>
+                      <span className="opacity-50">· {count}</span>
+                    </span>
+                    <span className="md:hidden">{category.mobileLabel}</span>
+                  </button>
+                )
+              })}
             </div>
           </motion.div>
 
