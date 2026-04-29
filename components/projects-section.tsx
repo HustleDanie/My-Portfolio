@@ -38,13 +38,11 @@ type Project = {
 }
 
 const categories = [
-  { id: "cinematic-ai", label: "Cinematic AI", mobileLabel: "Cinematic AI" },
   { id: "workflow-automation", label: "Workflow Automation", mobileLabel: "Automation" },
   { id: "ai-ml", label: "AI / ML", mobileLabel: "AI / ML" },
 ]
 
 const projectsByCategory: Record<string, Project[]> = {
-  "cinematic-ai": [],
   "workflow-automation": [
     {
       id: "n8n-claude-kit",
@@ -141,7 +139,7 @@ const projectsByCategory: Record<string, Project[]> = {
 const ProjectsSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [activeCategory, setActiveCategory] = useState("cinematic-ai")
+  const [activeCategory, setActiveCategory] = useState("workflow-automation")
 
   const currentProjects = projectsByCategory[activeCategory] || []
 

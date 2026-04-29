@@ -29,7 +29,6 @@ function TechIcon({ name, logo, className }: { name: string; logo: string; class
 }
 
 const categories = [
-  { id: "cinematic-ai", label: "Cinematic AI", mobileLabel: "Cinematic AI" },
   { id: "workflow-automation", label: "Workflow Automation", mobileLabel: "Automation" },
   { id: "ai-ml", label: "AI / ML", mobileLabel: "AI / ML" },
 ]
@@ -45,7 +44,6 @@ type Project = {
 }
 
 const projectsByCategory: Record<string, Project[]> = {
-  "cinematic-ai": [],
   "workflow-automation": [
     {
       id: "n8n-claude-kit",
@@ -442,7 +440,7 @@ function ProjectsPageContent() {
   const searchParams = useSearchParams()
   const categoryParam = searchParams.get("category")
   const validCategories = categories.map(c => c.id)
-  const initialCategory = categoryParam && validCategories.includes(categoryParam) ? categoryParam : "cinematic-ai"
+  const initialCategory = categoryParam && validCategories.includes(categoryParam) ? categoryParam : "workflow-automation"
   const [activeCategory, setActiveCategory] = useState(initialCategory)
 
   const currentProjects = projectsByCategory[activeCategory] || []
