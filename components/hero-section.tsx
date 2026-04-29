@@ -152,7 +152,7 @@ export function HeroSection() {
           className="mb-3 md:mb-6"
         >
           <h2 className="font-space-mono text-sm sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] uppercase text-gray-600 dark:text-gray-400 mb-2">
-            AI Applications Engineer
+            AI/ML Engineer & Automation Specialist
           </h2>
         </motion.div>
 
