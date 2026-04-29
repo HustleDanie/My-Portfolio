@@ -3,21 +3,20 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Calendar, Clock } from "lucide-react"
-
-const featuredPost = {
-  id: "knowledge-retrieval",
-  title: "Enterprise Knowledge Retrieval & Synthesis Platform",
-  description:
-    "A production-grade GenAI/MLOps platform for enterprise document search, synthesis, and citation-grounded RAG. Hybrid retrieval, evaluation harness, and a deployment story that holds up in real workloads.",
-  image: "/images/retrieval.png",
-  category: "RAG · MLOps",
-  date: "Apr 2026",
-  readTime: "8 min read",
-  link: "/projects/knowledge-retrieval",
-}
+import { ArrowRight } from "lucide-react"
 
 const blogPosts = [
+  {
+    id: "knowledge-retrieval",
+    title: "Enterprise Knowledge Retrieval & Synthesis Platform",
+    description:
+      "Production-grade GenAI/MLOps platform for enterprise document search, synthesis, and citation-grounded RAG with hybrid retrieval and an evaluation harness.",
+    image: "/images/retrieval.png",
+    category: "RAG · MLOps",
+    date: "Apr 2026",
+    readTime: "8 min read",
+    link: "/projects/knowledge-retrieval",
+  },
   {
     id: "omnisearch",
     title: "OmniSearch: Multimodal Product Discovery",
@@ -106,68 +105,13 @@ export default function BlogPage() {
             </p>
           </div>
 
-          {/* Featured Hero */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            className="mb-10 sm:mb-12 md:mb-16"
-          >
-            <Link href={featuredPost.link} className="block group">
-              <article className="grid lg:grid-cols-2 gap-0 bg-card border border-border hover:border-foreground/30 transition-all duration-300 hover:shadow-2xl dark:hover:shadow-white/5 overflow-hidden rounded-2xl">
-                <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[380px] overflow-hidden bg-gray-100 dark:bg-gray-900">
-                  <Image
-                    src={featuredPost.image}
-                    alt={featuredPost.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1.5 bg-black dark:bg-white text-white dark:text-black rounded-full text-[10px] font-space-mono uppercase tracking-[0.15em] font-medium">
-                      Featured
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-                  <span className="inline-block w-fit px-2.5 py-1 mb-4 bg-gray-100 dark:bg-gray-800 rounded-full text-[10px] font-space-mono uppercase tracking-wider text-foreground">
-                    {featuredPost.category}
-                  </span>
-                  <h2 className="font-orbitron text-xl sm:text-2xl md:text-3xl font-bold text-black dark:text-white mb-3 sm:mb-4 leading-tight group-hover:text-foreground/80 transition-colors">
-                    {featuredPost.title}
-                  </h2>
-                  <p className="font-space-mono text-sm sm:text-base text-muted-foreground leading-relaxed mb-5 sm:mb-6 line-clamp-3 sm:line-clamp-4">
-                    {featuredPost.description}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-space-mono text-muted-foreground mb-5 sm:mb-6">
-                    <span className="inline-flex items-center gap-1.5">
-                      <Calendar className="h-3.5 w-3.5" />
-                      {featuredPost.date}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5">
-                      <Clock className="h-3.5 w-3.5" />
-                      {featuredPost.readTime}
-                    </span>
-                  </div>
-                  <span className="inline-flex items-center gap-2 text-sm font-space-mono font-medium text-foreground group-hover:gap-3 transition-all">
-                    Read article
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </div>
-              </article>
-            </Link>
-          </motion.div>
-
-          {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {blogPosts.map((post, index) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 0.5, delay: 0.2 + index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.5, delay: 0.15 + index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <Link href={post.link} className="block h-full">
                   <article className="bg-card border border-border hover:border-foreground/30 transition-all duration-300 hover:shadow-xl dark:hover:shadow-white/5 overflow-hidden group h-full rounded-xl flex flex-col">
