@@ -5,6 +5,9 @@ import { useSearchParams } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Github, ExternalLink, Workflow, Cpu } from "lucide-react"
 import Link from "next/link"
+import { projectsByCategory as projectData, type Project as ProjectData } from "@/data/projects"
+import { ProjectQuickView } from "@/components/project-quick-view"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 function TechIcon({ name, logo, className }: { name: string; logo: string; className?: string }) {
   const [failed, setFailed] = useState(false)
@@ -33,126 +36,7 @@ const categories = [
   { id: "ai-ml", label: "AI / ML", mobileLabel: "AI / ML", icon: Cpu },
 ]
 
-type Project = {
-  id: string
-  title: string
-  description: string
-  image: string
-  github: string
-  link: string
-  techStack: { name: string; logo: string }[]
-}
-
-const projectsByCategory: Record<string, Project[]> = {
-  "workflow-automation": [
-    {
-      id: "n8n-claude-kit",
-      title: "n8n Claude Kit",
-      description: "Zero-to-workflow n8n scaffolding for Claude Code. Bundles 7 n8n skills, 3 subagents, and a /n8n-init slash command that bootstraps a ready-to-build n8n project in under 90 seconds.",
-      image: "/images/n8nclaudekit.png",
-      github: "https://github.com/HustleDanie/n8n-claude-kit",
-      link: "/projects/n8n-claude-kit",
-      techStack: [
-        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-        { name: "Claude", logo: "https://cdn.simpleicons.org/anthropic/191919" },
-        { name: "MCP", logo: "https://cdn.simpleicons.org/modelcontextprotocol/000000" },
-        { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
-      ],
-    },
-    {
-      id: "linkedin-ai-job-alert",
-      title: "LinkedIn AI Job Alert Pipeline",
-      description: "Automated n8n workflow that scrapes LinkedIn for remote AI/ML internships across 6 countries, scores with GPT-4o-mini, and sends alerts to Telegram.",
-      image: "/images/linkedin-job-alert.png",
-      github: "https://github.com/HustleDanie/LinkedIn-AI-Job-Alert-Pipeline",
-      link: "/projects/linkedin-ai-job-alert",
-      techStack: [
-        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-        { name: "Apify", logo: "https://cdn.simpleicons.org/apify/00C853" },
-        { name: "Telegram", logo: "https://cdn.simpleicons.org/telegram/26A5E4" },
-        { name: "Google Sheets", logo: "https://cdn.simpleicons.org/googlesheets/34A853" },
-      ],
-    },
-    // Deterministic Automation
-    {
-      id: "lead-generation-engine",
-      title: "Lead Capture → CRM Pipeline",
-      description: "Robust lead generation engine automating high-intent prospect processing through multi-step enrichment via Clearbit/Apollo, CRM storage in HubSpot/Salesforce, and real-time Slack notifications.",
-      image: "/images/leadgeneration.png",
-      github: "https://github.com/HustleDanie/lead-generation-engine",
-      link: "/projects/lead-generation-engine",
-      techStack: [
-        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-        { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
-        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
-        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-      ],
-    },
-    {
-      id: "email-triage-automation",
-      title: "Email Triage Automation",
-      description: "Production-grade n8n workflow turning a shared inbox into a classified, routed ticketing pipeline — GPT-4o-mini classification, RFC-3834 loop prevention, confidence-threshold human review, and thread-aware auto-replies.",
-      image: "/images/emailparsing.png",
-      github: "https://github.com/HustleDanie/Email-Triage-Automation",
-      link: "/projects/email-triage-automation",
-      techStack: [
-        { name: "n8n", logo: "https://cdn.simpleicons.org/n8n/EA4B71" },
-        { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-        { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
-        { name: "Zendesk", logo: "https://cdn.simpleicons.org/zendesk/03363D" },
-        { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
-      ],
-    },
-  ],
-  "ai-ml": [
-    {
-      id: "omnisearch",
-      title: "OmniSearch",
-      description: "Multimodal product discovery engine using CLIP embeddings. Search with text, images, or both for cross-modal e-commerce search.",
-      image: "/images/omnisearch.png",
-      github: "https://github.com/HustleDanie/OmniSearch-A-Multimodal-Retrieval-and-Ranking-System-for-Cross-Modal-E-Commerce-Product-Discovery",
-      link: "/projects/omnisearch",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "PyTorch", logo: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
-        { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
-        { name: "Weaviate", logo: "https://cdn.simpleicons.org/weaviate/00D1A0" },
-        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
-      ],
-    },
-    {
-      id: "medsecure",
-      title: "MedSecure",
-      description: "HIPAA-compliant medical document summarization platform with automatic PII masking and AI-powered summarization.",
-      image: "/images/medsecure.png",
-      github: "https://github.com/HustleDanie/MedSecure---HIPAA-Compliant-Medical-Summary-Platform-",
-      link: "/projects/medsecure",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
-        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
-        { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
-        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-      ],
-    },
-    {
-      id: "knowledge-retrieval",
-      title: "Enterprise Knowledge Retrieval",
-      description: "Production-ready GenAI/MLOps platform for enterprise document search, synthesis, and RAG pipelines with hybrid search.",
-      image: "/images/retrieval.png",
-      github: "https://github.com/HustleDanie/Enterprise-Knowledge-Retrieval-Synthesis-Platform",
-      link: "/projects/knowledge-retrieval",
-      techStack: [
-        { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
-        { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
-        { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
-        { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-      ],
-    },
-  ],
-}
+const projectsByCategory = projectData
 
 function ProjectsPageContent() {
   const searchParams = useSearchParams()
@@ -160,8 +44,17 @@ function ProjectsPageContent() {
   const validCategories = categories.map(c => c.id)
   const initialCategory = categoryParam && validCategories.includes(categoryParam) ? categoryParam : "workflow-automation"
   const [activeCategory, setActiveCategory] = useState(initialCategory)
+  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null)
+  const isMobile = useIsMobile()
 
   const currentProjects = projectsByCategory[activeCategory] || []
+
+  const openModalIfDesktop = (e: React.MouseEvent, project: ProjectData) => {
+    if (!isMobile) {
+      e.preventDefault()
+      setSelectedProject(project)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-background pt-20 sm:pt-24 pb-12 sm:pb-16">
@@ -242,8 +135,8 @@ function ProjectsPageContent() {
                 >
                   <div className="h-full bg-white dark:bg-card border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-900/50">
                     {/* Project Image */}
-                    <Link href={project.link}>
-                      <div className="relative h-40 sm:h-48 md:h-56 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+                    <Link href={`/projects/${project.id}`} onClick={(e) => openModalIfDesktop(e, project)}>
+                      <div className="relative h-40 sm:h-48 md:h-56 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 cursor-pointer">
                         <img
                           src={project.image || "/placeholder-logo.svg"}
                           alt={project.title}
@@ -258,8 +151,8 @@ function ProjectsPageContent() {
 
                     {/* Project Content */}
                     <div className="p-4 sm:p-5 md:p-6">
-                      <Link href={project.link}>
-                        <h3 className="font-orbitron text-base sm:text-lg md:text-xl font-bold text-black dark:text-white mb-2 sm:mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                      <Link href={`/projects/${project.id}`} onClick={(e) => openModalIfDesktop(e, project)}>
+                        <h3 className="font-orbitron text-base sm:text-lg md:text-xl font-bold text-black dark:text-white mb-2 sm:mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors cursor-pointer">
                           {project.title}
                         </h3>
                       </Link>
@@ -300,7 +193,8 @@ function ProjectsPageContent() {
                           <span className="sm:hidden">GitHub</span>
                         </Link>
                         <Link
-                          href={project.link}
+                          href={`/projects/${project.id}`}
+                          onClick={(e) => openModalIfDesktop(e, project)}
                           className="flex items-center gap-1 text-xs sm:text-sm font-space-mono text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                         >
                           <span>Details</span>
@@ -315,6 +209,8 @@ function ProjectsPageContent() {
           </AnimatePresence>
         </motion.div>
       </div>
+
+      <ProjectQuickView project={selectedProject} onClose={() => setSelectedProject(null)} />
     </div>
   )
 }
