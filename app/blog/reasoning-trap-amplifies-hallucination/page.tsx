@@ -33,7 +33,7 @@ export default function ArticlePage() {
             </span>
           </div>
           <h1 className="font-orbitron text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            Why Smarter AI Is Making Up More Answers, Not Fewer
+            The Reasoning Paradox: When Smarter Models Become Less Reliable
           </h1>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-space-mono text-muted-foreground mb-8">
             <span>By Hustle Daniel</span>

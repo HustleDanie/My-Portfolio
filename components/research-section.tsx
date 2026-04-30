@@ -12,7 +12,7 @@ import Image from "next/image"
 const blogPosts = [
   {
     id: "1",
-    title: "Why Smarter AI Is Making Up More Answers, Not Fewer",
+    title: "The Reasoning Paradox: When Smarter Models Become Less Reliable",
     subtitle: "OpenAI's newest model invents fake tools 48 percent of the time. The older, less clever model only does it 16 percent. The training that makes AI smarter is making it less reliable.",
     image: "/images/blog-placeholder.svg",
     category: "Reasoning",
@@ -21,7 +21,7 @@ const blogPosts = [
   },
   {
     id: "2",
-    title: "AI Is Starting to Do Its Own Safety Research",
+    title: "Automating Alignment: When Models Audit Their Own Safety",
     subtitle: "AI agents just beat human safety researchers four-to-one on a closed-form problem in a fifth of the time. The catch is in what kind of problem still needs the human.",
     image: "/images/blog-placeholder.svg",
     category: "AI Safety",
@@ -30,7 +30,7 @@ const blogPosts = [
   },
   {
     id: "3",
-    title: "Free AI Is Catching Up to the Expensive Kind",
+    title: "Closing the Open-Source Gap",
     subtitle: "Five major free AI models shipped in April 2026 that are good enough to do real work. The gap between paid AI and free AI just narrowed from a chasm to a step.",
     image: "/images/blog-placeholder.svg",
     category: "Open Source AI",

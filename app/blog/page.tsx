@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react"
 const blogPosts = [
   {
     id: "open-source-ai-catches-up",
-    title: "Free AI Is Catching Up to the Expensive Kind",
+    title: "Closing the Open-Source Gap",
     description:
       "Five major free AI models shipped in April 2026 that are good enough to do real work. The gap between paid AI and free AI just narrowed from a chasm to a step.",
     image: "/images/blog-placeholder.svg",
@@ -19,7 +19,7 @@ const blogPosts = [
   },
   {
     id: "ai-security-governance-gap",
-    title: "Most Companies Adding AI Are Already Getting Hacked Because of It",
+    title: "The Hidden Cost of Rapid AI Adoption",
     description:
       "3 out of 4 organizations have had a security incident involving AI in the last two years. More than 1 in 4 lost over a million dollars to one. Inside the gap and what to do.",
     image: "/images/blog-placeholder.svg",
@@ -30,7 +30,7 @@ const blogPosts = [
   },
   {
     id: "ai-scientist-publishes-peer-reviewed-papers",
-    title: "Can AI Actually Do Science? Someone Just Tested It",
+    title: "When Machines Author Research",
     description:
       "An AI system wrote a research paper, snuck it through peer review, then got it pulled when reviewers found out. What the experiment proved and what it didn't.",
     image: "/images/blog-placeholder.svg",
@@ -41,7 +41,7 @@ const blogPosts = [
   },
   {
     id: "automating-alignment-research",
-    title: "AI Is Starting to Do Its Own Safety Research",
+    title: "Automating Alignment: When Models Audit Their Own Safety",
     description:
       "AI agents just beat human safety researchers four-to-one on a closed-form problem in a fifth of the time. The catch is in what kind of problem still needs the human.",
     image: "/images/blog-placeholder.svg",
@@ -52,7 +52,7 @@ const blogPosts = [
   },
   {
     id: "reasoning-trap-amplifies-hallucination",
-    title: "Why Smarter AI Is Making Up More Answers, Not Fewer",
+    title: "The Reasoning Paradox: When Smarter Models Become Less Reliable",
     description:
       "OpenAI's newest model invents fake tools and parameters 48 percent of the time. The older, less clever model only does it 16 percent. The training that makes AI smarter is making it less reliable.",
     image: "/images/blog-placeholder.svg",

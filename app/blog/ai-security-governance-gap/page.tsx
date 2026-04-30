@@ -33,7 +33,7 @@ export default function ArticlePage() {
             </span>
           </div>
           <h1 className="font-orbitron text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            Most Companies Adding AI Are Already Getting Hacked Because of It
+            The Hidden Cost of Rapid AI Adoption
           </h1>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-space-mono text-muted-foreground mb-8">
             <span>By Hustle Daniel</span>
