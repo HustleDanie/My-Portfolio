@@ -2,12 +2,11 @@
 
 import { useRef, useState } from "react"
 import { motion, useInView, AnimatePresence } from "framer-motion"
-import { ArrowRight, Github, ExternalLink, Workflow, Cpu } from "lucide-react"
+import { ArrowRight, Github, Workflow, Cpu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { projectsByCategory, type Project } from "@/data/projects"
 import { ProjectQuickView } from "@/components/project-quick-view"
-import { useIsMobile } from "@/hooks/use-mobile"
 
 function TechIcon({ name, logo, className }: { name: string; logo: string; className?: string }) {
   const [failed, setFailed] = useState(false)
@@ -41,16 +40,8 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [activeCategory, setActiveCategory] = useState("workflow-automation")
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-  const isMobile = useIsMobile()
 
   const currentProjects = projectsByCategory[activeCategory] || []
-
-  const openModalIfDesktop = (e: React.MouseEvent, project: Project) => {
-    if (!isMobile) {
-      e.preventDefault()
-      setSelectedProject(project)
-    }
-  }
 
   return (
     <section id="projects" ref={ref} className="min-h-screen flex items-center justify-center py-12 md:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
@@ -128,29 +119,29 @@ const ProjectsSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="h-full bg-white dark:bg-card border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-900/50 rounded-xl md:rounded-none shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.08)] md:shadow-none">
+                <button
+                  type="button"
+                  onClick={() => setSelectedProject(project)}
+                  className="block w-full text-left h-full bg-white dark:bg-card border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-900/50 rounded-xl md:rounded-none shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.08)] md:shadow-none cursor-pointer"
+                >
                   {/* Project Image */}
-                  <Link href={`/projects/${project.id}`} onClick={(e) => openModalIfDesktop(e, project)}>
-                    <div className="relative h-40 sm:h-48 md:h-56 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 cursor-pointer">
-                      <img
-                        src={project.image || "/placeholder-logo.svg"}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          e.currentTarget.src = "/placeholder-logo.svg"
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                  </Link>
+                  <div className="relative h-40 sm:h-48 md:h-56 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+                    <img
+                      src={project.image || "/placeholder-logo.svg"}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.src = "/placeholder-logo.svg"
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
 
                   {/* Project Content */}
                   <div className="p-4 sm:p-5 md:p-6">
-                    <Link href={`/projects/${project.id}`} onClick={(e) => openModalIfDesktop(e, project)}>
-                      <h3 className="font-orbitron text-base sm:text-lg md:text-xl font-bold text-black dark:text-white mb-2 sm:mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors cursor-pointer">
-                        {project.title}
-                      </h3>
-                    </Link>
+                    <h3 className="font-orbitron text-base sm:text-lg md:text-xl font-bold text-black dark:text-white mb-2 sm:mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                      {project.title}
+                    </h3>
                     <p className="font-space-mono text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
                       {project.description}
                     </p>
@@ -175,8 +166,8 @@ const ProjectsSection = () => {
                     </div>
 
                     {/* GitHub Link */}
-                    <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-800">
-                      <Link
+                    <div className="flex items-center pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-800">
+                      <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -185,18 +176,10 @@ const ProjectsSection = () => {
                       >
                         <Github className="h-4 w-4" />
                         <span>View on GitHub</span>
-                      </Link>
-                      <Link
-                        href={`/projects/${project.id}`}
-                        onClick={(e) => openModalIfDesktop(e, project)}
-                        className="flex items-center gap-1 text-sm font-space-mono text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                      >
-                        <span>Details</span>
-                        <ExternalLink className="h-3 w-3" />
-                      </Link>
+                      </a>
                     </div>
                   </div>
-                </div>
+                </button>
               </motion.div>
             ))}
           </motion.div>

@@ -2,8 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
-import { X, Github, ExternalLink, ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { X, Github, ExternalLink } from "lucide-react"
 import type { Project } from "@/data/projects"
 
 function TechIcon({ name, logo, className }: { name: string; logo: string; className?: string }) {
@@ -132,28 +131,20 @@ export function ProjectQuickView({ project, onClose }: Props) {
                   </div>
                 </section>
 
-                <section className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Link
-                    href={`/projects/${project.id}`}
-                    onClick={onClose}
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-black dark:bg-white text-white dark:text-black font-space-mono text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors group"
-                  >
-                    View full project page
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
-                  {project.github && project.github !== "#" && (
+                {project.github && project.github !== "#" && (
+                  <section className="pt-2">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-border text-foreground font-space-mono text-sm rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-black dark:bg-white text-white dark:text-black font-space-mono text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
                     >
                       <Github className="h-4 w-4" />
                       View on GitHub
                       <ExternalLink className="h-3 w-3" />
                     </a>
-                  )}
-                </section>
+                  </section>
+                )}
               </div>
             </div>
           </motion.div>
