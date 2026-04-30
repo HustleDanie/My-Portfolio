@@ -33,7 +33,7 @@ export default function ArticlePage() {
             </span>
           </div>
           <h1 className="font-orbitron text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            76 Percent: Where the AI Security Gap Already Lives
+            Most Companies Adding AI Are Already Getting Hacked Because of It
           </h1>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-space-mono text-muted-foreground mb-8">
             <span>By Hustle Daniel</span>
@@ -64,7 +64,7 @@ export default function ArticlePage() {
           className="space-y-5 sm:space-y-6"
         >
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            <strong>The AI security debt is already due.</strong> 76 percent of organizations report AI-involved security incidents in the past two years; 27 percent are eating costs over $1 million.
+            <strong>The bill on rushing AI into companies is already coming due.</strong> 3 out of every 4 organizations have had a security incident involving AI in the last two years. More than 1 in 4 have lost over a million dollars to one.
           </p>
 
           <h2 className="font-orbitron text-xl sm:text-2xl font-semibold mt-8 sm:mt-10 mb-3">
@@ -72,7 +72,7 @@ export default function ArticlePage() {
           </h2>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            <a href="https://www.prnewswire.com/news-releases/ai-innovation-surges-as-security-fundamentals-lag-kroll-research-finds-302747672.html" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">Kroll&apos;s April 2026 research</a> on more than 1,000 enterprise security leaders quantifies what most CISOs already suspected: AI deployment outran governance, and the bill is now landing as actual incidents, not hypothetical risk. The same week, Yoshua Bengio led the release of the <a href="https://dailyaibite.com/ai-safety-report-2026-world-experts-final-warning/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">International AI Safety Report 2026</a>, signed by hundreds of researchers from 30+ countries, which arrives at a parallel conclusion from the policy side.
+            <a href="https://www.prnewswire.com/news-releases/ai-innovation-surges-as-security-fundamentals-lag-kroll-research-finds-302747672.html" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">A new April 2026 study</a> of more than 1,000 enterprise security leaders puts hard numbers on what most security teams already suspected: companies started using AI faster than they put rules and guardrails around it, and the gap is now showing up as real incidents instead of hypothetical risk. The same week, hundreds of top researchers from 30+ countries released the <a href="https://dailyaibite.com/ai-safety-report-2026-world-experts-final-warning/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">International AI Safety Report 2026</a>, which arrives at a similar conclusion from the policy side.
           </p>
 
           <h2 className="font-orbitron text-xl sm:text-2xl font-semibold mt-8 sm:mt-10 mb-3">

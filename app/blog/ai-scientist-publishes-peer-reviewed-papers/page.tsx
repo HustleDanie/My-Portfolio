@@ -33,7 +33,7 @@ export default function ArticlePage() {
             </span>
           </div>
           <h1 className="font-orbitron text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            How an AI Wrote a Paper, Got It Peer-Reviewed, and Then Got It Withdrawn
+            Can AI Actually Do Science? Someone Just Tested It
           </h1>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-space-mono text-muted-foreground mb-8">
             <span>By Hustle Daniel</span>
@@ -64,15 +64,23 @@ export default function ArticlePage() {
           className="space-y-5 sm:space-y-6"
         >
           <h2 className="font-orbitron text-xl sm:text-2xl font-semibold mt-4 sm:mt-6 mb-3">
-            The question
+            The question nobody had a clean answer to
           </h2>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            What does it actually mean when an AI system &ldquo;does science&rdquo;? The phrase has been doing heavy lifting in pitch decks for two years now. The interesting answer arrived in a paper from Sakana AI titled <a href="https://arxiv.org/abs/2504.08066" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search</a>. The system formulates hypotheses, runs experiments, analyzes results, and writes up the paper. One of its outputs cleared peer review at an ICLR workshop. Then the workshop organizers withdrew it.
+            Pitch decks have been throwing around &ldquo;AI will do science&rdquo; for two years. The phrase usually means very little. It could mean &ldquo;AI helps a researcher type faster.&rdquo; It could mean &ldquo;AI replaces the researcher entirely.&rdquo; Most of the time the speaker doesn&apos;t know which they mean either.
           </p>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            Both halves of that sentence matter. This piece walks through what the system does, what it actually demonstrated, and what the withdrawal tells you about the gap between &ldquo;technically capable&rdquo; and &ldquo;institutionally absorbed.&rdquo;
+            A real test of the question finally happened recently. <a href="https://arxiv.org/abs/2504.08066" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">A research team built a fully automated system</a> that comes up with research ideas, runs the experiments, looks at the results, and writes the paper. No human touches it after the topic is set. Then they submitted three of its papers to a real machine-learning conference, without telling the reviewers the papers were written by AI.
+          </p>
+
+          <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
+            One of the three got accepted. The reviewers liked it. Then the conference organizers found out it was written by AI and pulled it.
+          </p>
+
+          <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
+            Both halves of that story matter. This piece walks through what the system actually did, what it proved, and what the withdrawal tells you about the gap between &ldquo;the technology works&rdquo; and &ldquo;the world is ready for it to work.&rdquo;
           </p>
 
           <h2 className="font-orbitron text-xl sm:text-2xl font-semibold mt-8 sm:mt-10 mb-3">

@@ -33,7 +33,7 @@ export default function ArticlePage() {
             </span>
           </div>
           <h1 className="font-orbitron text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            The Reasoning Trap: Why Smarter Models Are Hallucinating More
+            Why Smarter AI Is Making Up More Answers, Not Fewer
           </h1>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-space-mono text-muted-foreground mb-8">
             <span>By Hustle Daniel</span>
@@ -64,15 +64,15 @@ export default function ArticlePage() {
           className="space-y-5 sm:space-y-6"
         >
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            On a benchmark called SimpleToolHalluBench, OpenAI&apos;s o4-mini fabricates tool calls in 48 percent of cases. Its predecessor o3 hallucinates 33 percent of the time. The older o1, by comparison, sits at 16 percent. The number that&apos;s supposed to come down with each generation is doing the opposite.
+            Here&apos;s a strange thing happening in AI right now: the smarter the model gets, the more often it just makes stuff up. New research shows OpenAI&apos;s o4-mini invents fake tools and parameters in 48 out of every 100 tries. The older, less-clever o1 only does it 16 times. Each new generation is supposed to be better. On this measure, they&apos;re getting worse.
           </p>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            That data point comes from <a href="https://openreview.net/forum?id=vHKUXkrpVs" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">a paper</a> presented at ICLR 2026 in Rio this week. The authors call it &ldquo;The Reasoning Trap.&rdquo; Their claim is sharper than the marketing-friendly framing of &ldquo;newer models hallucinate more.&rdquo; They argue that the very training process that makes models reason better is what makes them invent tools more confidently.
+            That number comes from <a href="https://openreview.net/forum?id=vHKUXkrpVs" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">a paper</a> presented at ICLR 2026, one of the field&apos;s biggest AI conferences. The authors call it &ldquo;The Reasoning Trap.&rdquo; Their claim goes further than &ldquo;newer models hallucinate more.&rdquo; They show that the same training that makes a model better at thinking is what makes it more confident when it invents things.
           </p>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            If that&apos;s right, every team building agents on top of frontier reasoning models has been holding the wrong end of the stick. You don&apos;t fix tool hallucination by adding more reasoning. More reasoning is the disease.
+            If they&apos;re right, every company building AI agents has been pulling the wrong lever. You don&apos;t fix made-up answers by teaching the model to think harder. Thinking harder is part of the problem.
           </p>
 
           <h2 className="font-orbitron text-xl sm:text-2xl font-semibold mt-8 sm:mt-10 mb-3">

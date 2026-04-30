@@ -7,21 +7,21 @@ import { ArrowRight } from "lucide-react"
 
 const blogPosts = [
   {
-    id: "deepseek-v4-open-source-inflection",
-    title: "DeepSeek V4 and the Month Open Source AI Stopped Playing Catch-Up",
+    id: "open-source-ai-catches-up",
+    title: "Free AI Is Catching Up to the Expensive Kind",
     description:
-      "DeepSeek's MIT-licensed V4 ships at 1.6T parameters with 1M-token context. Inside the architecture, the cost numbers, and why April 2026 is the open-weights inflection.",
+      "Five major free AI models shipped in April 2026 that are good enough to do real work. The gap between paid AI and free AI just narrowed from a chasm to a step.",
     image: "/images/blog-placeholder.svg",
     category: "Open Source AI",
     date: "Apr 2026",
     readTime: "7 min read",
-    link: "/blog/deepseek-v4-open-source-inflection",
+    link: "/blog/open-source-ai-catches-up",
   },
   {
     id: "ai-security-governance-gap",
-    title: "76 Percent: Where the AI Security Gap Already Lives",
+    title: "Most Companies Adding AI Are Already Getting Hacked Because of It",
     description:
-      "76% of organizations had AI-involved security incidents in the last two years; 27% paid over $1M. Inside the Kroll report and what's next on the regulatory side.",
+      "3 out of 4 organizations have had a security incident involving AI in the last two years. More than 1 in 4 lost over a million dollars to one. Inside the gap and what to do.",
     image: "/images/blog-placeholder.svg",
     category: "Industry",
     date: "Apr 2026",
@@ -30,9 +30,9 @@ const blogPosts = [
   },
   {
     id: "ai-scientist-publishes-peer-reviewed-papers",
-    title: "How an AI Wrote a Paper, Got It Peer-Reviewed, and Then Got It Withdrawn",
+    title: "Can AI Actually Do Science? Someone Just Tested It",
     description:
-      "Sakana AI's AI Scientist-v2 cleared peer review at an ICLR workshop. Then it didn't. What that gap between capability and legitimacy actually means for science.",
+      "An AI system wrote a research paper, snuck it through peer review, then got it pulled when reviewers found out. What the experiment proved and what it didn't.",
     image: "/images/blog-placeholder.svg",
     category: "Agents",
     date: "Apr 2026",
@@ -41,9 +41,9 @@ const blogPosts = [
   },
   {
     id: "automating-alignment-research",
-    title: "Anthropic Just Automated Part of Its Alignment Research. The Question Is Which Part.",
+    title: "AI Is Starting to Do Its Own Safety Research",
     description:
-      "Anthropic's Automated Alignment Researcher beat human researchers 4x on PGR scores in a fifth of the time. Reading the limits more carefully than the headline.",
+      "AI agents just beat human safety researchers four-to-one on a closed-form problem in a fifth of the time. The catch is in what kind of problem still needs the human.",
     image: "/images/blog-placeholder.svg",
     category: "AI Safety",
     date: "Apr 2026",
@@ -52,9 +52,9 @@ const blogPosts = [
   },
   {
     id: "reasoning-trap-amplifies-hallucination",
-    title: "The Reasoning Trap: Why Smarter Models Are Hallucinating More",
+    title: "Why Smarter AI Is Making Up More Answers, Not Fewer",
     description:
-      "An ICLR 2026 paper shows OpenAI's o4-mini fabricates tools 48% of the time vs 16% for o1. The training that makes models reason is what makes them invent tools confidently.",
+      "OpenAI's newest model invents fake tools and parameters 48 percent of the time. The older, less clever model only does it 16 percent. The training that makes AI smarter is making it less reliable.",
     image: "/images/blog-placeholder.svg",
     category: "Reasoning",
     date: "Apr 2026",

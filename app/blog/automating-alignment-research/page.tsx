@@ -33,7 +33,7 @@ export default function ArticlePage() {
             </span>
           </div>
           <h1 className="font-orbitron text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            Anthropic Just Automated Part of Its Alignment Research. The Question Is Which Part.
+            AI Is Starting to Do Its Own Safety Research
           </h1>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-space-mono text-muted-foreground mb-8">
             <span>By Hustle Daniel</span>
@@ -64,11 +64,11 @@ export default function ArticlePage() {
           className="space-y-5 sm:space-y-6"
         >
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            The question facing the AI safety field is whether autonomous agents can do the actual work of alignment research, not just assist it. <a href="https://alignment.anthropic.com/2026/automated-w2s-researcher/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">A new release from Anthropic</a> says yes, with conditions worth taking seriously. The conditions matter more than the headline.
+            For two years, the joke in the AI world has been that the people working hardest on AI safety are also the most outnumbered. There are only so many human researchers, and there are too many open problems for them to chase. A <a href="https://alignment.anthropic.com/2026/automated-w2s-researcher/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted underline-offset-4 hover:text-foreground">new April 2026 release</a> from one of those labs suggests the field is now trying to solve that bottleneck the obvious way: by getting AI to do the research itself.
           </p>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            The short answer: on problems where success has a clean, computable score, AI agents now beat human alignment researchers on both quality and speed. On problems where a human still has to decide what &ldquo;good&rdquo; means, the bottleneck moves to that decision. Three things make this case.
+            The short version: on problems where you can clearly measure whether an answer is right, AI agents already beat human safety researchers on both quality and speed. On problems where a human still has to decide what &ldquo;a good answer&rdquo; even means, the bottleneck just moves there instead. Three things make this case.
           </p>
 
           <h2 className="font-orbitron text-xl sm:text-2xl font-semibold mt-8 sm:mt-10 mb-3">
@@ -76,15 +76,15 @@ export default function ArticlePage() {
           </h2>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            Anthropic&apos;s Automated Alignment Researcher (AAR) is a system that deploys parallel Claude-powered agents in sandboxes to do real alignment work. Propose a hypothesis, run an experiment, analyze the result, share findings, iterate. The system was tested on weak-to-strong supervision, the problem of training a strong model using only the labels a weaker model can produce.
+            Anthropic&apos;s system, called the Automated Alignment Researcher, runs many AI agents in parallel sandboxes. Each one does what a human researcher would: come up with an idea, run an experiment, look at the results, share what worked, try again. The team tested it on a known-hard problem: how do you train a really good model using only the feedback a weaker model can give? (Imagine asking a high schooler to teach a college student. The student should still come out smarter than the teacher. Whether that&apos;s possible, and how much you lose, is the open question.)
           </p>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            On a chat preference dataset, AAR reached a Performance Gap Recovered score of 0.97 in five days. The run used nine agents, burned 800 cumulative agent-hours, and cost about $18,000 &mdash; roughly $22 per agent-hour. For comparison, two human researchers had previously spent seven days hand-tuning four established weak-to-strong methods on the same problem and stalled at PGR 0.23.
+            On a chat preference dataset, the agents closed 97 percent of the gap in five days. The run used nine AI agents, totaled 800 agent-hours, and cost about $18,000 (roughly $22 per agent-hour). For comparison, two human researchers had spent seven days on the same problem with four established methods and only closed 23 percent of the gap.
           </p>
 
           <p className="text-sm sm:text-base leading-relaxed text-foreground/90 font-space-mono">
-            That&apos;s a four-times factor on the score and a saturated metric. PGR of 0.97 means the strong-model trained on weak supervision reaches 97% of the gap between weak-only and strong-supervised baselines. The headroom is essentially gone.
+            That&apos;s a four-times jump on the score, and the score is now nearly maxed out. There isn&apos;t much room left for the next attempt to do better.
           </p>
 
           <blockquote className="border-l-2 border-foreground/40 pl-4 sm:pl-6 my-6 sm:my-8 italic text-foreground/80">

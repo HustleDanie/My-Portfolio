@@ -12,8 +12,8 @@ import Image from "next/image"
 const blogPosts = [
   {
     id: "1",
-    title: "The Reasoning Trap: Why Smarter Models Are Hallucinating More",
-    subtitle: "An ICLR 2026 paper shows OpenAI's o4-mini fabricates tools 48% of the time vs 16% for o1. The training that makes models reason is what makes them invent tools confidently.",
+    title: "Why Smarter AI Is Making Up More Answers, Not Fewer",
+    subtitle: "OpenAI's newest model invents fake tools 48 percent of the time. The older, less clever model only does it 16 percent. The training that makes AI smarter is making it less reliable.",
     image: "/images/blog-placeholder.svg",
     category: "Reasoning",
     readTime: "10 min read",
@@ -21,8 +21,8 @@ const blogPosts = [
   },
   {
     id: "2",
-    title: "Anthropic Automated Part of Alignment Research",
-    subtitle: "Anthropic's Automated Alignment Researcher beat human researchers 4x on PGR scores in a fifth of the time. Reading the limits more carefully than the headline.",
+    title: "AI Is Starting to Do Its Own Safety Research",
+    subtitle: "AI agents just beat human safety researchers four-to-one on a closed-form problem in a fifth of the time. The catch is in what kind of problem still needs the human.",
     image: "/images/blog-placeholder.svg",
     category: "AI Safety",
     readTime: "9 min read",
@@ -30,12 +30,12 @@ const blogPosts = [
   },
   {
     id: "3",
-    title: "DeepSeek V4 and the Open Source Inflection",
-    subtitle: "DeepSeek's MIT-licensed V4 ships at 1.6T parameters with 1M-token context. Inside the architecture, the cost numbers, and why April 2026 is the inflection.",
+    title: "Free AI Is Catching Up to the Expensive Kind",
+    subtitle: "Five major free AI models shipped in April 2026 that are good enough to do real work. The gap between paid AI and free AI just narrowed from a chasm to a step.",
     image: "/images/blog-placeholder.svg",
     category: "Open Source AI",
     readTime: "7 min read",
-    link: "/blog/deepseek-v4-open-source-inflection",
+    link: "/blog/open-source-ai-catches-up",
   },
 ]
 
