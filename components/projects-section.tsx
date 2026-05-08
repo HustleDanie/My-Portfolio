@@ -41,7 +41,7 @@ const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState("workflow-automation")
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
-  const currentProjects = projectsByCategory[activeCategory] || []
+  const currentProjects = (projectsByCategory[activeCategory] || []).slice(0, 3)
 
   return (
     <section id="projects" ref={ref} className="min-h-screen flex items-center justify-center py-12 md:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 overflow-hidden">
@@ -66,9 +66,9 @@ const ProjectsSection = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex justify-center mb-6 md:mb-12"
         >
-          <div className="relative inline-flex items-center bg-gray-200 dark:bg-gray-800 md:bg-gray-100 md:dark:bg-gray-900 rounded-full p-0.5 md:p-1 border border-gray-300 dark:border-gray-700 md:border-0 md:ring-1 md:ring-black/5 md:dark:ring-white/10">
+          <div className="relative inline-flex items-center bg-gray-100 dark:bg-gray-900 rounded-full p-1 ring-1 ring-black/5 dark:ring-white/10">
             <motion.div
-              className="absolute top-0.5 md:top-1 bottom-0.5 md:bottom-1 rounded-full bg-gray-500 dark:bg-gray-600 md:bg-white md:dark:bg-gray-800 md:shadow-sm md:ring-1 md:ring-black/5"
+              className="absolute top-1 bottom-1 rounded-full bg-white dark:bg-gray-800 shadow-sm ring-1 ring-black/5"
               layout
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
               style={{
@@ -77,24 +77,22 @@ const ProjectsSection = () => {
               }}
             />
             {categories.map((category) => {
-              const count = projectsByCategory[category.id]?.length ?? 0
               const Icon = category.icon
               return (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`relative z-10 px-3 md:px-5 py-1.5 rounded-full font-space-mono text-[10px] md:text-sm font-medium transition-colors duration-200 min-w-[100px] md:min-w-[150px] md:tracking-tight ${
+                  className={`relative z-10 px-3 md:px-5 py-1.5 rounded-full font-space-mono text-[10px] md:text-sm font-medium transition-colors duration-200 min-w-[120px] md:min-w-[150px] tracking-tight ${
                     activeCategory === category.id
-                      ? "text-white md:text-black md:dark:text-white"
+                      ? "text-black dark:text-white"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                   }`}
                 >
-                  <span className="hidden md:inline-flex items-center justify-center gap-1.5">
-                    <Icon className="h-3.5 w-3.5" />
-                    <span>{category.label}</span>
-                    <span className="opacity-50">· {count}</span>
+                  <span className="inline-flex items-center justify-center gap-1.5">
+                    <Icon className="h-3 w-3 md:h-3.5 md:w-3.5" />
+                    <span className="hidden md:inline">{category.label}</span>
+                    <span className="md:hidden">{category.mobileLabel}</span>
                   </span>
-                  <span className="md:hidden">{category.mobileLabel}</span>
                 </button>
               )
             })}

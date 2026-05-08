@@ -1,11 +1,21 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
-const blogPosts = [
+type BlogPost = {
+  id: string
+  title: string
+  description: string
+  image: string
+  category: string
+  date: string
+  readTime: string
+  mediumUrl: string | null
+}
+
+const blogPosts: BlogPost[] = [
   {
     id: "open-source-ai-catches-up",
     title: "Closing the Open-Source Gap",
@@ -15,7 +25,7 @@ const blogPosts = [
     category: "Open Source AI",
     date: "Apr 2026",
     readTime: "7 min read",
-    link: "/blog/open-source-ai-catches-up",
+    mediumUrl: null,
   },
   {
     id: "ai-security-governance-gap",
@@ -26,7 +36,7 @@ const blogPosts = [
     category: "Industry",
     date: "Apr 2026",
     readTime: "5 min read",
-    link: "/blog/ai-security-governance-gap",
+    mediumUrl: null,
   },
   {
     id: "ai-scientist-publishes-peer-reviewed-papers",
@@ -37,7 +47,7 @@ const blogPosts = [
     category: "Agents",
     date: "Apr 2026",
     readTime: "9 min read",
-    link: "/blog/ai-scientist-publishes-peer-reviewed-papers",
+    mediumUrl: null,
   },
   {
     id: "automating-alignment-research",
@@ -48,7 +58,7 @@ const blogPosts = [
     category: "AI Safety",
     date: "Apr 2026",
     readTime: "9 min read",
-    link: "/blog/automating-alignment-research",
+    mediumUrl: null,
   },
   {
     id: "reasoning-trap-amplifies-hallucination",
@@ -59,9 +69,77 @@ const blogPosts = [
     category: "Reasoning",
     date: "Apr 2026",
     readTime: "10 min read",
-    link: "/blog/reasoning-trap-amplifies-hallucination",
+    mediumUrl: null,
   },
 ]
+
+function BlogCard({ post }: { post: BlogPost }) {
+  const isPublished = !!post.mediumUrl
+
+  const cardContent = (
+    <article
+      className={`bg-card border border-border transition-all duration-300 overflow-hidden group h-full rounded-xl flex flex-col ${
+        isPublished
+          ? "hover:border-foreground/30 hover:shadow-xl dark:hover:shadow-white/5"
+          : "opacity-70"
+      }`}
+    >
+      <div className="relative h-44 sm:h-48 overflow-hidden bg-gray-100 dark:bg-gray-900">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          className={`object-cover transition-transform duration-700 ease-out ${
+            isPublished ? "group-hover:scale-105" : ""
+          }`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+        <div className="absolute top-3 left-3">
+          <span className="inline-block px-2.5 py-1 bg-white/90 dark:bg-black/80 backdrop-blur-sm rounded-full text-[10px] font-space-mono uppercase tracking-wider text-black dark:text-white">
+            {post.category}
+          </span>
+        </div>
+      </div>
+
+      <div className="p-4 sm:p-5 flex flex-col flex-1">
+        <h3 className="font-orbitron text-base sm:text-lg font-semibold text-foreground mb-2 leading-snug group-hover:text-foreground/80 transition-colors line-clamp-2">
+          {post.title}
+        </h3>
+        <p className="font-space-mono text-xs sm:text-sm text-muted-foreground line-clamp-3 mb-4 flex-1">
+          {post.description}
+        </p>
+        <div className="flex items-center justify-between pt-3 border-t border-border/60 text-[11px] sm:text-xs font-space-mono">
+          <span className="text-muted-foreground">
+            {post.date} · {post.readTime}
+          </span>
+          {isPublished ? (
+            <span className="flex items-center gap-1 text-foreground/80 group-hover:text-foreground transition-colors">
+              Read on Medium
+              <ExternalLink className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          ) : (
+            <span className="text-muted-foreground/70 italic">Coming soon</span>
+          )}
+        </div>
+      </div>
+    </article>
+  )
+
+  if (!isPublished) {
+    return <div className="block h-full cursor-default">{cardContent}</div>
+  }
+
+  return (
+    <a
+      href={post.mediumUrl as string}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block h-full"
+    >
+      {cardContent}
+    </a>
+  )
+}
 
 export default function BlogPage() {
   return (
@@ -79,7 +157,7 @@ export default function BlogPage() {
             </h1>
             <div className="w-12 md:w-20 h-1 bg-black dark:bg-white mx-auto mb-4 md:mb-6"></div>
             <p className="font-space-mono text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-              Notes on shipping production AI/ML systems and workflow automation that holds up in the real world.
+              Notes on shipping production AI/ML systems and workflow automation that holds up in the real world. Articles published on Medium.
             </p>
           </div>
 
@@ -91,42 +169,7 @@ export default function BlogPage() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.5, delay: 0.15 + index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                <Link href={post.link} className="block h-full">
-                  <article className="bg-card border border-border hover:border-foreground/30 transition-all duration-300 hover:shadow-xl dark:hover:shadow-white/5 overflow-hidden group h-full rounded-xl flex flex-col">
-                    <div className="relative h-44 sm:h-48 overflow-hidden bg-gray-100 dark:bg-gray-900">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                      <div className="absolute top-3 left-3">
-                        <span className="inline-block px-2.5 py-1 bg-white/90 dark:bg-black/80 backdrop-blur-sm rounded-full text-[10px] font-space-mono uppercase tracking-wider text-black dark:text-white">
-                          {post.category}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="p-4 sm:p-5 flex flex-col flex-1">
-                      <h3 className="font-orbitron text-base sm:text-lg font-semibold text-foreground mb-2 leading-snug group-hover:text-foreground/80 transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="font-space-mono text-xs sm:text-sm text-muted-foreground line-clamp-3 mb-4 flex-1">
-                        {post.description}
-                      </p>
-                      <div className="flex items-center justify-between pt-3 border-t border-border/60 text-[11px] sm:text-xs font-space-mono">
-                        <span className="text-muted-foreground">
-                          {post.date} · {post.readTime}
-                        </span>
-                        <span className="flex items-center gap-1 text-foreground/80 group-hover:text-foreground transition-colors">
-                          Read
-                          <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </Link>
+                <BlogCard post={post} />
               </motion.div>
             ))}
           </div>
