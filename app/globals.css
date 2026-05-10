@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: ui-monospace, SFMono-Regular, Monaco, Consolas, "Liberation Mono", "Menlo", monospace;
+  font-family: var(--font-space-mono), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 @layer utilities {
