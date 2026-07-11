@@ -27,19 +27,20 @@ function TechIcon({ name, logo }: { name: string; logo: string }) {
 }
 
 const techStack = [
-  { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-  { name: "TensorFlow", logo: "https://cdn.simpleicons.org/tensorflow/FF6F00" },
-  { name: "PyTorch", logo: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
-  { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
-  { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/1C3C3C" },
-  { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/10A37F" },
-  { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+  { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs/000000" },
+  { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
+  { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
+  { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+  { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+  { name: "Flutter", logo: "https://cdn.simpleicons.org/flutter/02569B" },
+  { name: "Dart", logo: "https://cdn.simpleicons.org/dart/0175C2" },
+  { name: "Prisma", logo: "https://cdn.simpleicons.org/prisma/2D3748" },
+  { name: "SQLite", logo: "https://cdn.simpleicons.org/sqlite/003B57" },
   { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
-  { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/000000" },
-  { name: "Weaviate", logo: "https://cdn.simpleicons.org/weaviate/00D1A0" },
-  { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-  { name: "Streamlit", logo: "https://cdn.simpleicons.org/streamlit/FF4B4B" },
-  { name: "Google Cloud", logo: "https://cdn.simpleicons.org/googlecloud/4285F4" },
+  { name: "Claude API", logo: "https://cdn.simpleicons.org/claude/D97757" },
+  { name: "Socket.io", logo: "https://cdn.simpleicons.org/socketdotio/010101" },
+  { name: "Stripe", logo: "https://cdn.simpleicons.org/stripe/635BFF" },
+  { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/000000" },
 ]
 
 export function TechStackSection() {
