@@ -120,7 +120,7 @@ export function AboutSection() {
                 "LLM-powered agents",
                 "n8n workflow automation",
               ]}
-              className="text-gray-700 dark:text-gray-300 mb-3 md:mb-6 font-space-mono text-sm sm:text-sm md:text-base text-left leading-loose sm:leading-relaxed"
+              className="text-gray-700 dark:text-gray-300 mb-3 md:mb-6 font-space-mono text-sm sm:text-sm md:text-base text-justify leading-loose sm:leading-relaxed"
             />
             <HighlightedText
               text="What I care about most is taking AI from notebook to production. That means evaluation, monitoring, and all the unglamorous glue work that turns a model into a product people can trust. Outside of work I play video games, chase new ideas, and tinker with emerging technologies. There is always something new I want to build."
@@ -130,7 +130,7 @@ export function AboutSection() {
                 "emerging technologies",
                 "something new",
               ]}
-              className="text-gray-700 dark:text-gray-300 mb-4 md:mb-8 text-sm sm:text-sm md:text-base font-space-mono text-left leading-loose sm:leading-relaxed"
+              className="text-gray-700 dark:text-gray-300 mb-4 md:mb-8 text-sm sm:text-sm md:text-base font-space-mono text-justify leading-loose sm:leading-relaxed"
             />
           </motion.div>
         </div>
