@@ -13,7 +13,7 @@ Personal portfolio for Hustle Daniel (AI/ML researcher). Pure client-side site â
 - **UI:** shadcn/ui (components in /components/ui/), Radix UI, Lucide React icons
 - **Animations:** Framer Motion (scroll-triggered, staggered, layout)
 - **Forms:** React Hook Form + Zod
-- **Fonts:** Inter (body) and Space Grotesk (headings). Legacy class names remain: Inter loads into `--font-space-mono` (`font-space-mono`), Space Grotesk into `--font-orbitron` (`font-orbitron`)
+- **Fonts:** Inter (body, loads into legacy `--font-space-mono` variable, class `font-space-mono`), Orbitron (headings, `font-orbitron`)
 - **State:** React hooks only â€” no Redux/Zustand
 - **Path alias:** `@/*` maps to project root
 
