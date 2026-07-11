@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Orbitron } from "next/font/google"
+import { Inter, Space_Grotesk } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { NavigationWrapper } from "@/components/navigation-wrapper"
@@ -15,8 +15,8 @@ const inter = Inter({
   display: "swap",
 })
 
-const orbitron = Orbitron({
-  weight: ["500", "600", "700", "800"],
+const spaceGrotesk = Space_Grotesk({
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-orbitron",
   display: "swap",
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${orbitron.variable} font-space-mono antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-space-mono antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <ScrollProgress />
           <div className="min-h-screen flex flex-col">
