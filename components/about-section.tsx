@@ -33,32 +33,25 @@ function HighlightedText({ text, keywords, className }: HighlightedTextProps) {
 
         if (isKeyword) {
           return (
-            <motion.span
+            <span
               key={index}
-              animate={{
-                backgroundColor: isHighlighted
-                  ? [
-                      "rgba(0, 0, 0, 0.12)",
-                      "rgba(0, 0, 0, 0.22)",
-                      "rgba(0, 0, 0, 0.12)",
-                    ]
-                  : "rgba(0, 0, 0, 0.06)",
-                scale: isHighlighted ? [1, 1.02, 1] : 1,
-              }}
-              transition={{
-                duration: 1.2,
-                repeat: isHighlighted ? Infinity : 0,
-                repeatType: "reverse",
-                ease: "easeInOut",
-              }}
-              className={`inline-block px-1 rounded transition-colors ${
+              className={`relative inline-block font-medium transition-colors duration-300 ${
                 isHighlighted
-                  ? "font-semibold text-gray-900 dark:text-gray-100"
-                  : "text-gray-700 dark:text-gray-300"
+                  ? "text-black dark:text-white"
+                  : "text-gray-800 dark:text-gray-200"
               }`}
             >
               {part}
-            </motion.span>
+              {isHighlighted && (
+                <motion.span
+                  className="absolute -bottom-0.5 left-0 right-0 h-[2px] rounded-full bg-black dark:bg-white"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  style={{ originX: 0 }}
+                  transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+                />
+              )}
+            </span>
           )
         }
         return <span key={index}>{part}</span>
