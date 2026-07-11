@@ -123,7 +123,7 @@ export function BlogSection() {
                       <h3 className="font-orbitron text-xl md:text-2xl lg:text-3xl font-bold mb-2 leading-tight">
                         {post.title}
                       </h3>
-                      <p className="text-xs md:text-sm lg:text-base text-gray-200 mb-4 line-clamp-2">
+                      <p className="font-times text-sm md:text-base lg:text-lg text-gray-200 mb-4 line-clamp-2">
                         {post.subtitle}
                       </p>
                       <div

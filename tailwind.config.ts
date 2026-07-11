@@ -108,6 +108,7 @@ const config: Config = {
           "Arial",
           "sans-serif",
         ],
+        times: ["Times New Roman", "Times", "serif"],
         "hustledanie": [
           "Hustledanie",
           "ui-sans-serif",

@@ -43,7 +43,7 @@ export function CertificationsGrid({ certs, animateOnView = false, isInView = tr
                   <h3 className="font-orbitron text-base sm:text-lg md:text-xl font-semibold text-white mb-1 sm:mb-2">
                     {cert.title}
                   </h3>
-                  <p className="font-space-mono text-xs sm:text-sm text-gray-200 line-clamp-2 sm:line-clamp-none">
+                  <p className="font-times text-sm sm:text-base text-gray-200 line-clamp-2 sm:line-clamp-none">
                     {cert.description}
                   </p>
                   <p className="font-space-mono text-xs text-gray-400 mt-2">

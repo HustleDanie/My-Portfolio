@@ -113,7 +113,7 @@ export function BlogSectionMobile() {
                     </div>
                   </div>
                   <CardContent className="p-4">
-                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 line-clamp-2 font-space-mono">
+                    <p className="text-base text-gray-700 dark:text-gray-300 mb-3 line-clamp-2 font-times">
                       {blog.subtitle}
                     </p>
                     <div className="flex items-center text-xs font-space-mono text-gray-600 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors">

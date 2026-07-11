@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Orbitron } from "next/font/google"
+import { Space_Mono, Orbitron } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { NavigationWrapper } from "@/components/navigation-wrapper"
@@ -8,8 +8,8 @@ import { Footer } from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 import { ScrollProgress } from "@/components/scroll-progress"
 
-const inter = Inter({
-  weight: ["400", "500", "600", "700"],
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-space-mono",
   display: "swap",
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${orbitron.variable} font-space-mono antialiased`}>
+      <body className={`${spaceMono.variable} ${orbitron.variable} font-space-mono antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <ScrollProgress />
           <div className="min-h-screen flex flex-col">

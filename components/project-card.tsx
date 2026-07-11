@@ -133,7 +133,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </CardHeader>
 
         <CardContent className="flex-1 space-y-5">
-          <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-3">{project.description}</p>
+          <p className="font-times text-gray-600 dark:text-gray-400 text-base leading-relaxed line-clamp-3">{project.description}</p>
 
           {/* Enhanced Technologies Section */}
           <div className="space-y-3">

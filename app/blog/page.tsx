@@ -105,7 +105,7 @@ function BlogCard({ post }: { post: BlogPost }) {
         <h3 className="font-orbitron text-base sm:text-lg font-semibold text-foreground mb-2 leading-snug group-hover:text-foreground/80 transition-colors line-clamp-2">
           {post.title}
         </h3>
-        <p className="font-space-mono text-xs sm:text-sm text-muted-foreground line-clamp-3 mb-4 flex-1">
+        <p className="font-times text-sm sm:text-base text-muted-foreground line-clamp-3 mb-4 flex-1">
           {post.description}
         </p>
         <div className="flex items-center justify-between pt-3 border-t border-border/60 text-[11px] sm:text-xs font-space-mono">

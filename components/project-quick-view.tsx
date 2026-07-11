@@ -98,7 +98,7 @@ export function ProjectQuickView({ project, onClose }: Props) {
                   <h4 className="font-orbitron text-xs sm:text-sm font-semibold text-black dark:text-white mb-2 uppercase tracking-wider">
                     What was built
                   </h4>
-                  <p className="font-space-mono text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p className="font-times text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                     {project.summary}
                   </p>
                 </section>
@@ -107,7 +107,7 @@ export function ProjectQuickView({ project, onClose }: Props) {
                   <h4 className="font-orbitron text-xs sm:text-sm font-semibold text-black dark:text-white mb-2 uppercase tracking-wider">
                     Highlights
                   </h4>
-                  <ul className="space-y-2 font-space-mono text-sm text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-2 font-times text-base text-gray-700 dark:text-gray-300">
                     {project.highlights.map((h, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="mt-1.5 h-1 w-1 rounded-full bg-foreground/60 flex-shrink-0" />
