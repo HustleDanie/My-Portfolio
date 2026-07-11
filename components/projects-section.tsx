@@ -67,28 +67,26 @@ const ProjectsSection = () => {
           className="flex justify-center mb-6 md:mb-12"
         >
           <div className="relative inline-flex items-center bg-gray-100 dark:bg-gray-900 rounded-full p-1 ring-1 ring-black/5 dark:ring-white/10">
-            <motion.div
-              className="absolute top-1 bottom-1 rounded-full bg-white dark:bg-gray-800 shadow-sm ring-1 ring-black/5"
-              layout
-              transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              style={{
-                width: `calc(${100 / categories.length}% - 4px)`,
-                left: `calc(${(categories.findIndex(c => c.id === activeCategory) * 100) / categories.length}% + 2px)`,
-              }}
-            />
             {categories.map((category) => {
               const Icon = category.icon
               return (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`relative z-10 px-3 md:px-5 py-1.5 rounded-full font-space-mono text-[10px] md:text-sm font-medium transition-colors duration-200 min-w-[120px] md:min-w-[150px] tracking-tight ${
+                  className={`relative px-3 md:px-5 py-1.5 rounded-full font-space-mono text-[10px] md:text-sm font-medium transition-colors duration-200 min-w-[120px] md:min-w-[150px] tracking-tight ${
                     activeCategory === category.id
                       ? "text-black dark:text-white"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                   }`}
                 >
-                  <span className="inline-flex items-center justify-center gap-1.5">
+                  {activeCategory === category.id && (
+                    <motion.span
+                      layoutId="home-category-pill"
+                      className="absolute inset-0 rounded-full bg-white dark:bg-gray-800 shadow-sm ring-1 ring-black/5"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10 inline-flex items-center justify-center gap-1.5">
                     <Icon className="h-3 w-3 md:h-3.5 md:w-3.5" />
                     <span className="hidden md:inline">{category.label}</span>
                     <span className="md:hidden">{category.mobileLabel}</span>
