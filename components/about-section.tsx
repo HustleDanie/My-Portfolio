@@ -96,7 +96,7 @@ export function AboutSection() {
               <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-800 dark:to-black rounded-lg overflow-hidden">
                 <img
                   src="/images/uche-portrait.jpg"
-                  alt="Uche Maduabuchi Daniel - AI/ML Engineer & Automation Specialist"
+                  alt="Uche Maduabuchi Daniel - AI Engineer & Automation Specialist"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/10 dark:bg-black/20"></div>
@@ -117,11 +117,11 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-1 lg:order-2"
           >
-            <h3 className="font-orbitron text-xl sm:text-xl md:text-2xl font-bold mb-3 md:mb-4">AI/ML Engineer & Automation Specialist</h3>
+            <h3 className="font-orbitron text-xl sm:text-xl md:text-2xl font-bold mb-3 md:mb-4">AI Engineer & Automation Specialist</h3>
             <HighlightedText
-              text="Hi, I'm Uche Maduabuchi Daniel, an AI/ML Engineer & Automation Specialist with a Computer Science degree from the University of Ibadan. I build AI systems that make it to production, from RAG pipelines and multimodal retrieval to LLM-powered agents, along with n8n workflow automation that turns models into software people can actually use."
+              text="Hi, I'm Uche Maduabuchi Daniel, an AI Engineer & Automation Specialist with a Computer Science degree from the University of Ibadan. I build AI systems that make it to production, from RAG pipelines and multimodal retrieval to LLM-powered agents, along with n8n workflow automation that turns models into software people can actually use."
               keywords={[
-                "AI/ML Engineer & Automation Specialist",
+                "AI Engineer & Automation Specialist",
                 "RAG pipelines",
                 "multimodal retrieval",
                 "LLM-powered agents",
