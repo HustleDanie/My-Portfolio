@@ -119,7 +119,7 @@ export function AboutSection() {
           >
             <h3 className="font-orbitron text-xl sm:text-xl md:text-2xl font-bold mb-3 md:mb-4">AI/ML Engineer & Automation Specialist</h3>
             <HighlightedText
-              text="Hi, I'm Uche Maduabuchi Daniel, an AI/ML Engineer & Automation Specialist with a Computer Science degree from the University of Ibadan. I build production AI systems — RAG pipelines, multimodal retrieval, and LLM-powered agents — alongside n8n workflow automation that turns models into reliable, real-world software."
+              text="Hi, I'm Uche Maduabuchi Daniel, an AI/ML Engineer & Automation Specialist with a Computer Science degree from the University of Ibadan. I build AI systems that make it to production, from RAG pipelines and multimodal retrieval to LLM-powered agents, along with n8n workflow automation that turns models into software people can actually use."
               keywords={[
                 "AI/ML Engineer & Automation Specialist",
                 "RAG pipelines",
@@ -130,13 +130,12 @@ export function AboutSection() {
               className="text-gray-700 dark:text-gray-300 mb-3 md:mb-6 font-space-mono text-sm sm:text-sm md:text-base text-left leading-loose sm:leading-relaxed"
             />
             <HighlightedText
-              text="I'm passionate about shipping AI from notebook to production — wiring up evaluation, monitoring, and the messy automation glue that turns a model into a working product. Beyond building, I enjoy video games, exploring new ideas, and experimenting with emerging technologies. Always eager to push boundaries and ship something new."
+              text="What I care about most is taking AI from notebook to production. That means evaluation, monitoring, and all the unglamorous glue work that turns a model into a product people can trust. Outside of work I play video games, chase new ideas, and tinker with emerging technologies. There is always something new I want to build."
               keywords={[
                 "notebook to production",
                 "evaluation, monitoring",
                 "emerging technologies",
-                "push boundaries",
-                "ship something new",
+                "something new",
               ]}
               className="text-gray-700 dark:text-gray-300 mb-4 md:mb-8 text-sm sm:text-sm md:text-base font-space-mono text-left leading-loose sm:leading-relaxed"
             />
